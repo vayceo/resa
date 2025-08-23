@@ -143,8 +143,8 @@ void InitInGame()
         pNetGame = new CNetGame(
                 "94.23.168.153",
                 1957,
-                "Psycho_Bye",
-                ""
+                CSettings::Get().szNickName,
+                CSettings::Get().szPassword
         );
 
 		bNetworkInited = true;
