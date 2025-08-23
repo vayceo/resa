@@ -358,8 +358,7 @@ void CPlayerTags::Draw(CVector* tagPpos, const char* szName, const float *distFr
 						);
 
     // AFK Icon
-    if (pPlayer->IsAFK())
-    {
+    if (pPlayer->IsAFK() && m_pAfk_icon && m_pAfk_icon->raster) {
         ImVec2 a(HealthBarBDR1.x - (pGUI->GetFontSize() * 1.4f), HealthBarBDR1.y);
         ImVec2 b(a.x + (pGUI->GetFontSize() * 1.3f), a.y + (pGUI->GetFontSize() * 1.3f));
         ImGui::GetForegroundDrawList()->AddImage((ImTextureID)m_pAfk_icon->raster, a, b);
