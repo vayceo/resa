@@ -1,0 +1,201 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/oil_bg"
+    tools:ignore="HardcodedText,SpUsage, contentDescription">
+
+    <View
+        android:id="@+id/exitButton"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/cross_bold"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/infoIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/warning_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/infoText"
+        app:layout_constraintEnd_toStartOf="@+id/infoText"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/infoText" />
+
+    <TextView
+        android:id="@+id/infoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="Нажимайте на кнопки одновременно, и вы увидите\nпрогресс
+заполнения нефти в бочку"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/infoIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/waterIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintHeight_percent="0.05"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintEnd_toEndOf="@+id/waterProgressImg"
+        app:layout_constraintStart_toStartOf="@+id/waterProgressImg"
+        app:layout_constraintTop_toBottomOf="@+id/infoIcon"
+        app:srcCompat="@drawable/oil_water" />
+
+    <ImageView
+        android:id="@+id/waterProgressImg"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.65"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="@dimen/_3sdp"
+        app:layout_constraintEnd_toStartOf="@+id/oilProgressImg"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waterIcon"
+        app:srcCompat="@drawable/oil_bar" />
+
+    <com.skydoves.progressview.ProgressView
+        android:id="@+id/waterProgress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_1sdp"
+        app:progressView_colorBackground="#00000000"
+        app:progressView_autoAnimate="false"
+        app:progressView_progressFromPrevious="false"
+        app:progressView_orientation="vertical"
+        app:progressView_max="1000"
+        app:progressView_min="0"
+        app:progressView_progress="500"
+        app:progressView_colorGradientStart="#FF28B2DD"
+        app:progressView_colorGradientEnd="#FF0872AD"
+        app:progressView_radius="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/waterProgressImg"
+        app:layout_constraintEnd_toEndOf="@+id/waterProgressImg"
+        app:layout_constraintStart_toStartOf="@+id/waterProgressImg"
+        app:layout_constraintTop_toTopOf="@+id/waterProgressImg" />
+
+    <TextView
+        android:id="@+id/waterProgressText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintWidth_percent="0.03"
+        android:gravity="center"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="@dimen/_15sdp"
+        android:autoSizeMinTextSize="@dimen/_8sdp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="0%"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/waterProgressImg"
+        app:layout_constraintStart_toStartOf="@+id/waterProgress"
+        app:layout_constraintTop_toBottomOf="@+id/waterProgressImg" />
+
+    <ImageView
+        android:id="@+id/oilProgressImg"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.65"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="@dimen/_3sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/waterProgressImg"
+        app:layout_constraintTop_toBottomOf="@+id/imageView30"
+        app:srcCompat="@drawable/oil_bar" />
+
+    <com.skydoves.progressview.ProgressView
+        android:id="@+id/oilProgress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:progressView_autoAnimate="false"
+        app:progressView_progressFromPrevious="false"
+        app:progressView_orientation="vertical"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_1sdp"
+        app:progressView_colorBackground="#00000000"
+        app:progressView_max="1000"
+        app:progressView_min="0"
+        app:progressView_progress="500"
+        app:progressView_colorGradientStart="#FF282B2C"
+        app:progressView_colorGradientEnd="#FF1D2022"
+        app:progressView_radius="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/oilProgressImg"
+        app:layout_constraintEnd_toEndOf="@+id/oilProgressImg"
+        app:layout_constraintStart_toStartOf="@+id/oilProgressImg"
+        app:layout_constraintTop_toTopOf="@+id/oilProgressImg" />
+
+    <TextView
+        android:id="@+id/oilProgressText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintWidth_percent="0.03"
+        android:gravity="center"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="@dimen/_15sdp"
+        android:autoSizeMinTextSize="@dimen/_8sdp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="0%"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/oilProgressImg"
+        app:layout_constraintStart_toStartOf="@+id/oilProgressImg"
+        app:layout_constraintTop_toBottomOf="@+id/oilProgressImg" />
+
+    <ImageView
+        android:id="@+id/imageView30"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintEnd_toEndOf="@+id/oilProgressImg"
+        app:layout_constraintStart_toStartOf="@+id/oilProgressImg"
+        app:layout_constraintTop_toTopOf="@+id/waterIcon"
+        app:srcCompat="@drawable/oil_oil" />
+
+    <ImageView
+        android:id="@+id/waterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/oil_waterbtn"
+        app:layout_constraintBottom_toBottomOf="@+id/waterProgressText"
+        app:layout_constraintEnd_toStartOf="@+id/waterProgressImg"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/oilButton"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="@+id/oilProgressText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toEndOf="@+id/oilProgressImg"
+        app:srcCompat="@drawable/oil_oilbtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

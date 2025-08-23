@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+    android:layout_width="match_parent"
+    android:id="@+id/mainLayout"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/rectangle_casino_dice"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_11sdp"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:includeFontPadding="false"
+            android:text="Неон переливающийся"
+            android:textColor="@color/white"
+            android:textFontWeight="700"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/delimiter1"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/blue_line"
+            android:paddingEnd="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/caption" />
+
+
+        <TextView
+            android:id="@+id/priceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="3.999.999 руб."
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/caption"
+            app:layout_constraintStart_toStartOf="@+id/caption"
+            app:layout_constraintTop_toBottomOf="@id/delimiter1" />
+
+        <ImageView
+            android:id="@+id/leftButton"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/priceText" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buyButton"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:backgroundTint="#4CAF50"
+            android:shadowColor="@color/black"
+            android:shadowRadius="30"
+            android:text="Купить"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_5sdp"
+            app:cornerRadius="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/leftButton"
+            app:layout_constraintEnd_toStartOf="@+id/exitButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/leftButton"
+            app:layout_constraintTop_toTopOf="@+id/leftButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/exitButton"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:backgroundTint="#F44336"
+            android:shadowColor="@color/black"
+            android:shadowRadius="30"
+            android:text="выход"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_5sdp"
+            app:cornerRadius="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/buyButton"
+            app:layout_constraintEnd_toStartOf="@+id/rightButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buyButton"
+            app:layout_constraintTop_toTopOf="@+id/buyButton" />
+
+        <ImageView
+            android:id="@+id/rightButton"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:adjustViewBounds="true"
+            android:rotation="180"
+            android:src="@drawable/arrow_back"
+            app:layout_constraintBottom_toBottomOf="@+id/leftButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/leftButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

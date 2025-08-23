@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.skydoves.colorpickerview.ColorPickerView
+            android:id="@+id/colorPicker"
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="@dimen/_160sdp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/selectButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/yellow"
+            android:text="Выбрать"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/colorPicker"
+            app:layout_constraintTop_toBottomOf="@+id/colorPicker" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue_"
+            android:text="Отмена"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/colorPicker"
+            app:layout_constraintTop_toTopOf="@+id/selectButton" />
+
+        <com.skydoves.colorpickerview.sliders.AlphaSlideBar
+            android:id="@+id/alphaSlideBar"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            app:borderColor_AlphaSlideBar="@android:color/darker_gray"
+            app:borderSize_AlphaSlideBar="5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:selector_AlphaSlideBar="@drawable/tuning_colorpicker_slider" />
+
+        <com.skydoves.colorpickerview.sliders.BrightnessSlideBar
+            android:id="@+id/brightnessSlide"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            app:borderColor_BrightnessSlider="@android:color/darker_gray"
+            app:borderSize_BrightnessSlider="5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alphaSlideBar"
+            app:selector_BrightnessSlider="@drawable/tuning_colorpicker_slider" />
+    </androidx.constraintlayout.widget.ConstraintLayout>

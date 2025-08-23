@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/_170sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/race_stat_bg"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <ImageView
+            android:id="@+id/posIcon"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/race_stat_pos_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/posCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:textSize="@dimen/_8sdp"
+            android:text="Позиция"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/posIcon"
+            app:layout_constraintStart_toEndOf="@+id/posIcon"
+            app:layout_constraintTop_toTopOf="@+id/posIcon" />
+
+        <ImageView
+            android:id="@+id/posValueBg"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/race_stat_value_bg"
+            android:tint="@color/yellow"
+            app:layout_constraintBottom_toBottomOf="@+id/posCaption"
+            app:layout_constraintStart_toStartOf="@+id/checkValueBg"
+            app:layout_constraintTop_toTopOf="@+id/posCaption" />
+
+        <TextView
+            android:id="@+id/posValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:textSize="@dimen/_9sdp"
+            android:text="15/15"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/posValueBg"
+            app:layout_constraintEnd_toEndOf="@+id/posValueBg"
+            app:layout_constraintStart_toStartOf="@+id/posValueBg"
+            app:layout_constraintTop_toTopOf="@+id/posValueBg" />
+
+        <ImageView
+            android:id="@+id/br1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="#43FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/posValueBg"
+            app:layout_constraintStart_toStartOf="@+id/posIcon"
+            app:layout_constraintTop_toBottomOf="@+id/posIcon" />
+
+
+        <ImageView
+            android:id="@+id/checkIcon"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/race_stat_check_icon"
+            app:layout_constraintStart_toStartOf="@+id/posIcon"
+            app:layout_constraintTop_toTopOf="@+id/br1" />
+
+        <TextView
+            android:id="@+id/checkCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:textSize="@dimen/_8sdp"
+            android:text="Чекпоинты"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/checkIcon"
+            app:layout_constraintStart_toStartOf="@+id/posCaption"
+            app:layout_constraintTop_toTopOf="@+id/checkIcon" />
+
+        <ImageView
+            android:id="@+id/checkValueBg"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:adjustViewBounds="true"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:src="@drawable/race_stat_value_bg"
+            android:tint="#FF3051"
+            app:layout_constraintBottom_toBottomOf="@+id/checkCaption"
+            app:layout_constraintStart_toEndOf="@+id/checkCaption"
+            app:layout_constraintTop_toTopOf="@+id/checkCaption" />
+
+        <TextView
+            android:id="@+id/checkValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:textSize="@dimen/_9sdp"
+            android:text="15/25"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/checkValueBg"
+            app:layout_constraintEnd_toEndOf="@+id/checkValueBg"
+            app:layout_constraintStart_toStartOf="@+id/checkValueBg"
+            app:layout_constraintTop_toTopOf="@+id/checkValueBg" />
+
+        <ImageView
+            android:id="@+id/br2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="#43FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/posValueBg"
+            app:layout_constraintStart_toStartOf="@+id/posIcon"
+            app:layout_constraintTop_toBottomOf="@+id/checkIcon" />
+
+
+        <ImageView
+            android:id="@+id/timeIcon"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/race_stat_time_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/posIcon"
+            app:layout_constraintTop_toTopOf="@+id/br2" />
+
+        <TextView
+            android:id="@+id/timeCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:textSize="@dimen/_8sdp"
+            android:text="Время"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/timeIcon"
+            app:layout_constraintStart_toStartOf="@+id/posCaption"
+            app:layout_constraintTop_toTopOf="@+id/timeIcon" />
+
+        <ImageView
+            android:id="@+id/timeValueBg"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/race_stat_value_bg"
+            android:tint="@color/blue_"
+            app:layout_constraintBottom_toBottomOf="@+id/timeCaption"
+            app:layout_constraintStart_toStartOf="@+id/checkValueBg"
+            app:layout_constraintTop_toTopOf="@+id/timeCaption" />
+
+        <TextView
+            android:id="@+id/timeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:textSize="@dimen/_9sdp"
+            android:text="10:23"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/timeValueBg"
+            app:layout_constraintEnd_toEndOf="@+id/timeValueBg"
+            app:layout_constraintStart_toStartOf="@+id/timeValueBg"
+            app:layout_constraintTop_toTopOf="@+id/timeValueBg" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

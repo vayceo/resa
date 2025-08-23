@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"
+    tools:showIn="@layout/battlepass">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/mainTopContentGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/mainStartConentGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lvlBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/battlepass_lvl_bg"
+        app:layout_constraintHeight_percent="0.65"
+        app:layout_constraintStart_toStartOf="@+id/mainStartConentGl"
+        app:layout_constraintTop_toTopOf="@+id/mainTopContentGl"
+        app:layout_constraintWidth_percent="0.19">
+
+        <TextView
+            android:id="@+id/currentLvlText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:autoSizeMaxTextSize="@dimen/_15sdp"
+            android:autoSizeMinTextSize="@dimen/_10sdp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="Уровень 2"
+            android:textColor="#7DC1F3"
+            app:layout_constraintEnd_toEndOf="@+id/lvlBg"
+            app:layout_constraintHeight_percent="0.11"
+            app:layout_constraintStart_toStartOf="@+id/lvlBg"
+            app:layout_constraintTop_toTopOf="@+id/lvlBg"
+            app:layout_constraintWidth_percent="0.7" />
+
+        <TextView
+            android:id="@+id/pointForNextLvlCaption"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:autoSizeMaxTextSize="@dimen/_9sdp"
+            android:autoSizeMinTextSize="@dimen/_6sdp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/inter_light"
+            android:gravity="center"
+            android:text="Очков до след. уровня: "
+            android:textColor="#7DC1F3"
+            app:layout_constraintEnd_toEndOf="@+id/currentLvlText"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintStart_toStartOf="@+id/currentLvlText"
+            app:layout_constraintTop_toBottomOf="@+id/currentLvlText"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <TextView
+            android:id="@+id/pointForUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:text="800"
+            android:textColor="#F5F193"
+            android:textSize="@dimen/_23sdp"
+            app:layout_constraintEnd_toEndOf="@+id/lvlBg"
+            app:layout_constraintStart_toStartOf="@+id/lvlBg"
+            app:layout_constraintTop_toBottomOf="@+id/pointForNextLvlCaption" />
+
+        <TextView
+            android:id="@+id/descriptionPoint"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:autoSizeMaxTextSize="@dimen/_10sdp"
+            android:autoSizeMinTextSize="@dimen/_6sdp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/inter_light"
+            android:gravity="center"
+            android:text="1.000 очков = 1 уровень"
+            android:textColor="#0A7A9D"
+            app:layout_constraintEnd_toEndOf="@+id/currentLvlText"
+            app:layout_constraintHeight_percent="0.08"
+            app:layout_constraintStart_toStartOf="@+id/currentLvlText"
+            app:layout_constraintTop_toBottomOf="@+id/pointForUp"
+            app:layout_constraintWidth_percent="0.9" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buyLvlButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_7sdp"
+            android:autoSizeMaxTextSize="@dimen/_8sdp"
+            android:autoSizeMinTextSize="@dimen/_5sdp"
+            android:autoSizeTextType="uniform"
+            android:backgroundTint="#53FFF4"
+            android:fontFamily="@font/ttnorms_extrabold"
+            android:text="Купить уровни"
+            android:textColor="#493D3D"
+            app:cornerRadius="@dimen/_2sdp"
+            app:layout_constraintEnd_toEndOf="@+id/lvlBg"
+            app:layout_constraintHeight_percent="0.17"
+            app:layout_constraintStart_toStartOf="@+id/lvlBg"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionPoint" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/giftButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_7sdp"
+            android:autoSizeMaxTextSize="@dimen/_8sdp"
+            android:autoSizeMinTextSize="@dimen/_5sdp"
+            android:autoSizeTextType="uniform"
+            android:backgroundTint="#D2FF53"
+            android:fontFamily="@font/ttnorms_extrabold"
+            android:text="Подарить пропуск"
+            android:textColor="#493D3D"
+            app:cornerRadius="@dimen/_2sdp"
+            app:layout_constraintEnd_toEndOf="@+id/lvlBg"
+            app:layout_constraintHeight_percent="0.17"
+            app:layout_constraintStart_toStartOf="@+id/lvlBg"
+            app:layout_constraintTop_toBottomOf="@+id/buyLvlButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/lvlBg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lvlBg"
+        app:layout_constraintTop_toTopOf="@+id/lvlBg"
+        tools:listitem="@layout/battlepass_main_item" />
+
+    <ImageView
+        android:id="@+id/chipsIcon"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:visibility="gone"
+        android:src="@drawable/battlepass_chips"
+        app:layout_constraintBottom_toTopOf="@+id/chipsCaption"
+        app:layout_constraintStart_toStartOf="@+id/mainStartConentGl"
+        app:layout_constraintTop_toBottomOf="@+id/lvlBg"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/chipsCaption"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/din_pro_medium"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:text="Доступно фишек"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/mainStartConentGl"
+        app:layout_constraintTop_toBottomOf="@+id/chipsIcon" />
+
+    <TextView
+        android:id="@+id/chipsCount"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/visby_round_cf_extra_bold"
+        android:text="1.000"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/chipsIcon"
+        app:layout_constraintStart_toEndOf="@+id/chipsIcon"
+        app:layout_constraintTop_toTopOf="@+id/chipsIcon" />
+
+    <ImageView
+        android:layout_width="@dimen/_17sdp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:adjustViewBounds="true"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:src="@drawable/notify_info"
+        app:layout_constraintBottom_toBottomOf="@+id/chipsIcon"
+        app:layout_constraintStart_toEndOf="@+id/chipsCount"
+        app:layout_constraintTop_toTopOf="@+id/chipsIcon" />
+
+
+</merge>

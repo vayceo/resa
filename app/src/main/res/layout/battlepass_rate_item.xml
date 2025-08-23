@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_460sdp"
+    android:layout_height="@dimen/_32sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/_3sdp"
+    android:background="@drawable/battlepass_rate_item_bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/placeBg"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/battlepass_rate_item_place_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.074">
+
+        <ImageView
+            android:id="@+id/placeIcon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/battlepass_rate_item_place_1_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <TextView
+            android:id="@+id/placeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99"
+            android:fontFamily="@font/din_pro_black"
+            android:includeFontPadding="false"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:textSize="@dimen/_8sdp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/placeIcon"
+            app:layout_constraintEnd_toEndOf="@+id/placeIcon"
+            app:layout_constraintStart_toStartOf="@+id/placeIcon"
+            app:layout_constraintTop_toTopOf="@+id/placeIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/nick"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.5"
+        android:text="Egor_Plakapenka"
+        android:textColor="@color/white"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:fontFamily="@font/visby_round_cf_extra_bold"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/placeBg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pointsText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/visby_round_cf_extra_bold"
+        android:text="999.999.999 очков"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.23" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="@drawable/monolog_bg">
+
+    <ImageView
+        android:id="@+id/personImage"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_250sdp"
+        android:layout_marginRight="16dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/skin_test"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/textBg"
+        android:visibility="invisible"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/monolog_text_bg"
+        android:minHeight="@dimen/_71sdp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/personImage"
+        app:layout_constraintWidth_percent=".4713">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/akrobat_semi_bold"
+            android:rotation="357.18"
+            android:text="Задача полицейского - обеспечивать порядок на улицах города. Для этого тебе потребуется разыскивать преступников, и вершить правосудие! Ха-ха."
+            android:textColor="#3E3E3E"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@id/author"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".87" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_41sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:fontFamily="@font/akrobat_semi_bold"
+            android:rotation="356.65"
+            android:text=" - Инструктор"
+            android:textColor="#B3B3B3"
+            android:textSize="@dimen/_9sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:rotation="-2"
+        android:text="И так пойдет"
+        app:layout_constraintBottom_toBottomOf="@+id/personImage"
+        app:layout_constraintEnd_toEndOf="@+id/textBg"
+        app:layout_constraintStart_toStartOf="@+id/textBg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

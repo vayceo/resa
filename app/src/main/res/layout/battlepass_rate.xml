@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/battlepass"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rateStartContentGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rateEndContentGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rateTopContentGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rateRecyclerBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/battlepass_rate_recycler_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rateEndContentGl"
+        app:layout_constraintTop_toTopOf="@+id/rateTopContentGl"
+        app:layout_constraintWidth_percent="0.68">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateBottomCaptionGl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.12"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/magicstore_cat_bg"
+            app:layout_constraintBottom_toTopOf="@+id/rateBottomCaptionGl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/rateCatByLvl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/magicstore_cat_active_bg"
+                android:backgroundTint="#26C6DA"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:text="По уровням"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rateNoDonateCat"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="#66BB6A"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:text="По выполненным заданиям"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rateCatByLvl"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+<!--        <TextView-->
+<!--            android:id="@+id/rateListCaption"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Топ 100 игроков сезона"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:fontFamily="@font/din_pro_medium"-->
+<!--            android:textSize="@dimen/_13sdp"-->
+<!--            android:includeFontPadding="false"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/rateBottomCaptionGl"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rateRecycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/battlepass_rate_item"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rateBottomCaptionGl"
+            app:layout_constraintWidth_percent="0.97" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/rateLogo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/battlepass_rate_logo"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout7"
+        app:layout_constraintStart_toStartOf="@+id/rateStartContentGl"
+        app:layout_constraintTop_toTopOf="@+id/rateTopContentGl"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <TextView
+        android:id="@+id/rateYouPlaceCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/din_pro_black"
+        android:text="ВЫ ЗАНИМАЕТЕ"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintEnd_toEndOf="@+id/rateLogo"
+        app:layout_constraintStart_toStartOf="@+id/rateLogo"
+        app:layout_constraintTop_toBottomOf="@+id/rateLogo" />
+
+    <ImageView
+        android:id="@+id/rateYouPlaceBg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:src="@drawable/battlepass_rate_u_place_bg"
+        app:layout_constraintEnd_toEndOf="@+id/rateLogo"
+        app:layout_constraintStart_toStartOf="@+id/rateLogo"
+        app:layout_constraintTop_toBottomOf="@+id/rateYouPlaceCaption" />
+
+    <TextView
+        android:id="@+id/rateYouPlaceText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/din_pro_medium"
+        app:layout_constraintWidth_percent="0.08"
+        app:layout_constraintHeight_percent="0.08"
+        android:gravity="center"
+        android:text="1 место"
+        android:textColor="#493D3D"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:autoSizeMaxTextSize="@dimen/_16sdp"
+        android:autoSizeMinTextSize="@dimen/_10sdp"
+        android:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/rateYouPlaceBg"
+        app:layout_constraintEnd_toEndOf="@+id/rateYouPlaceBg"
+        app:layout_constraintStart_toStartOf="@+id/rateYouPlaceBg"
+        app:layout_constraintTop_toTopOf="@+id/rateYouPlaceBg" />
+</merge>

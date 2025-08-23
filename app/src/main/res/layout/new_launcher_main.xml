@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/new_launcher_main_bg">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/new_launcher_main_people_img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startVerticalGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.02"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomSocialGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85"/>
+
+
+    <ImageView
+        android:id="@+id/vkButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintWidth_percent="0.05"
+        android:src="@drawable/start_menu_vk_icon"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSocialGl"
+        app:layout_constraintStart_toStartOf="@+id/startVerticalGl" />
+
+    <ImageView
+        android:id="@+id/tgButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/start_menu_tg_icon"
+        app:layout_constraintBottom_toTopOf="@+id/vkButton"
+        app:layout_constraintStart_toStartOf="@+id/startVerticalGl"
+        app:layout_constraintWidth_percent="0.05" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

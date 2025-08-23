@@ -1,0 +1,173 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/milk_bg">
+
+    <View
+        android:id="@+id/exitButton"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/cross_bold"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/infoIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/warning_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/infoText"
+        app:layout_constraintEnd_toStartOf="@+id/infoText"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/infoText" />
+
+    <TextView
+        android:id="@+id/infoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="Нажимайте на кнопки одновременно, и вы увидите \nпрогресс заполнения молока в бидон"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/infoIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/waterIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="@+id/progress1"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintStart_toStartOf="@+id/progress1"
+        app:layout_constraintTop_toBottomOf="@+id/infoIcon"
+        app:srcCompat="@drawable/milk_icon1" />
+
+    <TextView
+        android:id="@+id/progressText1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="@dimen/_15sdp"
+        android:autoSizeMinTextSize="@dimen/_8sdp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/din_pro_bold"
+        android:gravity="center"
+        android:text="0%"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/progress1"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintStart_toStartOf="@+id/progress1"
+        app:layout_constraintTop_toBottomOf="@+id/progress1"
+        app:layout_constraintWidth_percent="0.03" />
+
+    <com.skydoves.progressview.ProgressView
+        android:id="@+id/progress2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.65"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:progressView_autoAnimate="false"
+        app:progressView_progressFromPrevious="false"
+        app:progressView_orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/progress1"
+        app:layout_constraintTop_toBottomOf="@+id/milkIcon2"
+        app:layout_constraintWidth_percent="0.04"
+        app:progressView_colorBackground="#60FFFFFF"
+        app:progressView_colorGradientStart="#F7F7F7"
+        app:progressView_colorGradientEnd="#C9C9C9"
+        app:progressView_max="1000"
+        app:progressView_min="0"
+        app:progressView_progress="40"
+        app:progressView_radius="@dimen/_7sdp" />
+
+    <com.skydoves.progressview.ProgressView
+        android:id="@+id/progress1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:progressView_autoAnimate="false"
+        app:progressView_progressFromPrevious="false"
+        app:progressView_orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/progress2"
+        app:layout_constraintHeight_percent="0.65"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waterIcon"
+        app:layout_constraintWidth_percent="0.04"
+        app:progressView_colorBackground="#60FFFFFF"
+        app:progressView_colorGradientStart="#DD4928"
+        app:progressView_colorGradientEnd="#AD3A08"
+        app:progressView_max="1000"
+        app:progressView_min="0"
+        app:progressView_progress="40"
+        app:progressView_radius="@dimen/_7sdp" />
+
+    <TextView
+        android:id="@+id/progressText2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="@dimen/_15sdp"
+        android:autoSizeMinTextSize="@dimen/_8sdp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/din_pro_bold"
+        android:gravity="center"
+        android:text="0%"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/progress2"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintStart_toStartOf="@+id/progress2"
+        app:layout_constraintTop_toBottomOf="@+id/progress2"
+        app:layout_constraintWidth_percent="0.03" />
+
+    <ImageView
+        android:id="@+id/milkIcon2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="@+id/progress2"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintStart_toStartOf="@+id/progress2"
+        app:layout_constraintTop_toTopOf="@+id/waterIcon"
+        android:src="@drawable/milk_icon2" />
+
+    <ImageView
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/milk_button1"
+        app:layout_constraintBottom_toBottomOf="@+id/progressText1"
+        app:layout_constraintEnd_toStartOf="@+id/progress1"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/milk_button2"
+        app:layout_constraintBottom_toBottomOf="@+id/progressText2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toEndOf="@+id/progress2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

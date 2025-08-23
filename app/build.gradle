@@ -1,0 +1,145 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    flavorDimensions 'version'
+    productFlavors {
+        ver_release {
+            dimension "version"
+            manifestPlaceholders = [appName:"MOBILE RUSSIA"]
+            firebaseCrashlytics {
+                nativeSymbolUploadEnabled true
+            }
+
+            externalNativeBuild {
+                cmake {
+                    cppFlags '-fvisibility=hidden'
+                }
+            }
+        }
+        ver_test {
+            dimension "version"
+            applicationIdSuffix ".test"
+            versionNameSuffix "-test"
+            manifestPlaceholders = [appName:"MOBILE RUSSIA TEST"]
+
+            firebaseCrashlytics {
+                nativeSymbolUploadEnabled false
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+
+    kotlinOptions {
+        jvmTarget = "21"
+    }
+
+    compileSdk 35
+    defaultConfig {
+        minSdkVersion 26
+        targetSdkVersion 35
+
+        namespace 'com.russia.game'
+        applicationId "com.russia.game"
+        versionName "1000 beta"
+        versionCode 1000
+
+        multiDexEnabled = true
+
+        lintOptions {
+            checkReleaseBuilds false
+            abortOnError false
+        }
+
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a'
+        }
+    }
+
+
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
+    }
+
+    packagingOptions {
+        jniLibs {
+            excludes += ['META-INF/*']
+        }
+        resources {
+            excludes += ['META-INF/*']
+        }
+    }
+
+    ndkVersion '28.0.13004108'
+
+    androidResources {
+        noCompress 'mp3'
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+        }
+        debug {
+            externalNativeBuild {
+                cmake {
+                    cppFlags '-g'
+                }
+            }
+
+            debuggable true
+            minifyEnabled false
+            jniDebuggable false
+            renderscriptDebuggable false
+        }
+    }
+    viewBinding {
+        enabled = true
+    }
+
+    buildFeatures {
+        prefab true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'com.bytedance.android:shadowhook:1.0.10'
+    implementation 'com.airbnb.android:lottie:6.4.0'
+    implementation 'com.github.rommansabbir:AnimationX:2.0'
+    implementation 'nl.dionsegijn:konfetti-xml:2.0.2'
+
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation group: 'org.ini4j', name: 'ini4j', version: '0.5.4'
+    implementation "com.github.skydoves:progressview:1.1.3"
+    implementation 'com.github.Triggertrap:SeekArc:v1.1'
+    implementation 'com.akexorcist:round-corner-progress-bar:2.1.2'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+
+    implementation platform('com.google.firebase:firebase-bom:33.16.0')
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-crashlytics-ndk'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging'
+
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.github.valkriaine:Bouncy:2.3'
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    implementation 'androidx.viewpager2:viewpager2:1.1.0'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+    implementation "com.github.skydoves:colorpickerview:2.3.0"
+    apply plugin: 'com.google.gms.google-services'
+}

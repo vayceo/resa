@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_90sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:background="@drawable/tire_shop_dialog_bg"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/tire_shop_dialog_text_panel_icon"
+            app:layout_constraintBottom_toBottomOf="@id/caption"
+            app:layout_constraintEnd_toStartOf="@id/caption"
+            app:layout_constraintTop_toTopOf="@id/caption" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:maxHeight="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/caption" />
+        <!--        <SeekBar-->
+        <!--            android:id="@+id/tire_shop_bar"-->
+        <!--            android:layout_width="190dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginBottom="25dp"-->
+        <!--            android:indeterminate="false"-->
+        <!--            android:max="100"-->
+        <!--            android:progress="0"-->
+        <!--            android:maxHeight="12dp"-->
+        <!--            android:minHeight="12dp"-->
+        <!--            android:progressDrawable="@drawable/tire_shop_seekbar_drawable"-->
+        <!--            android:thumb="@drawable/tire_shop_seekbar_thumb"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"/>-->
+
+        <TextView
+            android:id="@+id/caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/pt_root_ui_medium"
+            android:includeFontPadding="false"
+            android:text="Ширина колес"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/okButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_27sdp"
+            android:backgroundTint="@color/yellow"
+            android:text="Установить"
+            android:textSize="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/slider"
+            app:layout_constraintTop_toBottomOf="@+id/slider" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_27sdp"
+            android:backgroundTint="@color/blue_"
+            android:text="Отмена"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/slider"
+            app:layout_constraintTop_toBottomOf="@+id/slider" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

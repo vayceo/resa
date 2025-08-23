@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_fl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
+    <SurfaceView
+        android:id="@+id/main_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/ui_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="visible">
+
+        <include android:id="@+id/hudView"
+            layout="@layout/hud" />
+
+        <ViewStub
+            android:id="@+id/armyGameStub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/armygame" />
+
+        <ViewStub
+            android:id="@+id/fuelStationStub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/fuelstation" />
+
+        <ViewStub
+            android:id="@+id/skinShopStub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/shopstoreselect" />
+
+        <ViewStub
+            android:id="@+id/gunShopStub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/gunshop" />
+
+        <ViewStub
+            android:id="@+id/preDeathStub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/pre_death" />
+
+        <ViewStub
+            android:id="@+id/autoShopStub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/autoshop" />
+
+        <ViewStub
+            android:id="@+id/furnitureFactoryStub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/furniture_factory" />
+
+        <ViewStub
+            android:id="@+id/mineGame1Stub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/mine_1" />
+
+        <ViewStub
+            android:id="@+id/mineGame2Stub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/mine_2" />
+
+        <ViewStub
+            android:id="@+id/mineGame3Stub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/mine_3" />
+
+        <ViewStub
+            android:id="@+id/objectEditorStub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/object_editor" />
+
+        <ViewStub
+            android:id="@+id/casinoChipStub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/casino_chip" />
+
+        <include layout="@layout/sd_dialog" />
+        <include layout="@layout/notification" />
+
+    </FrameLayout>
+
+    <include layout="@layout/serverselect" />
+</FrameLayout>

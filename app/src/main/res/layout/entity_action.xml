@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainLayout"
+    android:visibility="visible"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/playerActionsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        >
+
+        <ImageView
+            android:id="@+id/playerExit"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/cross_with_bg"
+            android:tint="#EF5350"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/playerNick"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginBottom="38dp"
+            android:background="@drawable/ent_action_name_bg"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="Egor_Plakapenka ( 945 )"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_5sdp"
+            app:layout_constraintBottom_toTopOf="@+id/playerExit"
+            app:layout_constraintEnd_toEndOf="@+id/playerExit"
+            app:layout_constraintStart_toStartOf="@+id/playerExit" />
+
+        <TextView
+            android:id="@+id/playerPass"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/message_bubble"
+            android:backgroundTint="#5C6BC0"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="Показать пасспорт"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@+id/playerExit"
+            app:layout_constraintTop_toBottomOf="@+id/playerNick" />
+
+        <TextView
+            android:id="@+id/playerHandShake"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/message_bubble"
+            android:backgroundTint="#5C6BC0"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="Пожать руку"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="@+id/playerPass"
+            app:layout_constraintTop_toBottomOf="@+id/playerPass" />
+
+        <TextView
+            android:id="@+id/playerLic"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/message_bubble"
+            android:backgroundTint="#5C6BC0"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="Показать лицензии"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@+id/playerExit"
+            app:layout_constraintTop_toBottomOf="@+id/playerHandShake" />
+
+        <TextView
+            android:id="@+id/playerVoen"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/message_bubble_from_right"
+            android:backgroundTint="#5C6BC0"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="Показать военный билет"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_5sdp"
+            app:layout_constraintEnd_toStartOf="@+id/playerExit"
+            app:layout_constraintTop_toTopOf="@+id/playerPass" />
+
+        <TextView
+            android:id="@+id/playerMed"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/message_bubble_from_right"
+            android:backgroundTint="#5C6BC0"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="Показать мед. карту"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="@+id/playerVoen"
+            app:layout_constraintTop_toTopOf="@+id/playerHandShake" />
+
+        <TextView
+            android:id="@+id/playerPts"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/message_bubble_from_right"
+            android:backgroundTint="#5C6BC0"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="Показать ПТС"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_5sdp"
+            app:layout_constraintEnd_toStartOf="@+id/playerExit"
+            app:layout_constraintTop_toTopOf="@+id/playerLic" />
+
+        <TextView
+            android:id="@+id/playerMute"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+
+            android:backgroundTint="#ff0000"
+            android:background="@drawable/ent_action_name_bg"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="Игнорировать"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="@+id/playerExit"
+            app:layout_constraintStart_toStartOf="@+id/playerExit"
+            app:layout_constraintTop_toBottomOf="@+id/playerPts" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

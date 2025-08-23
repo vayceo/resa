@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tuningItem"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_width="@dimen/_55sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/styling_item_bg">
+
+        <TextView
+            android:id="@+id/caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/inter_light"
+            android:includeFontPadding="false"
+            android:text="Цвет неона"
+            android:textColor="#8CFFFFFF"
+            android:textSize="@dimen/_6sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_styling_neon"
+            app:layout_constraintBottom_toTopOf="@+id/priceBg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/caption" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/priceBg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp"
+            android:background="@drawable/tuning_item_price_bg"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/priceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="500 000 руб."
+                    android:textColor="#A4FFFFFF"
+                    android:textSize="@dimen/_4sdp"
+                    android:includeFontPadding="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/priceBg" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

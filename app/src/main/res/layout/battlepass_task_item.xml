@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_300sdp"
+    android:layout_height="@dimen/_80sdp"
+    android:layout_marginTop="@dimen/_7sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/battlepass_task_item_bg">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endCaptionGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28"/>
+
+    <TextView
+        android:id="@+id/caption"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.6"
+        android:text="Посети место"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="@dimen/_12sdp"
+        android:autoSizeMinTextSize="@dimen/_9sdp"
+        android:fontFamily="@font/ttnorms_extrabold"
+        app:layout_constraintBottom_toTopOf="@+id/endCaptionGl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startContentGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endContentGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/progressBottomGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/visby_round_cf_extra_bold"
+        android:textColor="#8E8E8E"
+        android:textSize="@dimen/_10sdp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:text="Найди ближайшее АЗС и купи канистру с топливом"
+        app:layout_constraintBottom_toTopOf="@+id/progress"
+        app:layout_constraintEnd_toStartOf="@+id/endContentGl"
+        app:layout_constraintStart_toStartOf="@+id/startContentGl"
+        app:layout_constraintTop_toTopOf="@+id/endCaptionGl" />
+
+    <com.skydoves.progressview.ProgressView
+        android:id="@+id/progress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        android:layout_marginEnd="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBottomGl"
+
+        app:layout_constraintEnd_toStartOf="@+id/rewardText"
+
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="@+id/startContentGl"
+        app:progressView_autoAnimate="false"
+        app:progressView_colorBackground="@color/black20"
+        app:progressView_colorProgress="@color/yellow"
+        app:progressView_max="100"
+        app:progressView_padding="1dp"
+        app:progressView_progress="50"
+        app:progressView_progressFromPrevious="true"
+        app:progressView_radius="5dp" />
+
+    <TextView
+        android:id="@+id/progressText"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="0 из 10"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:autoSizeMaxTextSize="@dimen/_8sdp"
+        android:autoSizeMinTextSize="@dimen/_6sdp"
+        android:fontFamily="@font/visby_round_cf_extra_bold"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/progress"
+        app:layout_constraintEnd_toEndOf="@+id/progress"
+        app:layout_constraintStart_toStartOf="@+id/progress"
+        app:layout_constraintTop_toTopOf="@+id/progress" />
+
+    <TextView
+        android:id="@+id/rewardText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/achivments_item_reward_bg"
+        android:fontFamily="@font/visby_round_cf_extra_bold"
+        android:paddingStart="@dimen/_3sdp"
+        android:paddingEnd="@dimen/_3sdp"
+        android:text="+100 очков"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_9sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/progress"
+        app:layout_constraintEnd_toStartOf="@+id/endContentGl"
+        app:layout_constraintTop_toTopOf="@+id/progress" />
+
+    <ImageView
+        android:id="@+id/refreshButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/battlepass_task_item_refresh"
+        app:layout_constraintBottom_toTopOf="@+id/endCaptionGl"
+        app:layout_constraintEnd_toStartOf="@+id/endContentGl"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.065" />
+
+    <ImageView
+        android:id="@+id/completedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/battlepass_task_item_completed"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

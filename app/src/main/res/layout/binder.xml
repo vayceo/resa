@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/binder_main_layout"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/_400sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_gravity="center"
+        android:background="@drawable/blue_rounded_rectangle"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/addButton"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/plus"
+            android:tint="#CCFF90"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/exitButton"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/cross_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_black"
+            android:includeFontPadding="false"
+            android:text="Биндер"
+            android:textAllCaps="true"
+            android:textColor="#00A5BC"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/exitButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/addButton" />
+
+        <com.factor.bouncy.BouncyRecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            app:allow_drag_reorder="true"
+            app:allow_item_swipe="true"
+            app:layout_constraintBottom_toTopOf="@+id/binderHelpText2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addButton"
+            app:recyclerview_damping_ratio="DAMPING_RATIO_LOW_BOUNCY"
+            app:recyclerview_fling_animation_size=".3"
+            app:recyclerview_overscroll_animation_size=".3"
+            app:recyclerview_stiffness="STIFFNESS_MEDIUM" />
+
+        <TextView
+            android:id="@+id/binderHelpText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:text="* Используйте свайп вправо чтобы выделить цветом"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/recycler" />
+
+        <TextView
+            android:id="@+id/binderHelpText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:text="* Используйте свайп влево чтобы удалить"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_6sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/recycler" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/addLayout"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:background="#9EFFFFFF"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+
+                android:text="Вы можете отправлять сразу несколько сообщений. \nИспользуйте ; для разделения"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_7sdp"
+                app:layout_constraintEnd_toEndOf="@+id/addInput"
+                app:layout_constraintStart_toStartOf="@+id/addInput"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/addInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded_rectangle_black"
+                android:fontFamily="@font/roboto_bold"
+                android:hint="Ваш текст..."
+                android:imeOptions="flagNoFullscreen|actionSend"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLines="1"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingEnd="@dimen/_6sdp"
+                android:paddingBottom="@dimen/_7sdp"
+                android:singleLine="true"
+                android:textColor="#ffffffff"
+                android:textColorHint="#7EFFFFFF"
+                android:textCursorDrawable="@drawable/text_cursor"
+                android:textSize="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bindingAddSucces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/yellow"
+                android:text="Готово"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/addInput"
+                app:layout_constraintStart_toStartOf="@+id/addInput"
+                app:layout_constraintTop_toBottomOf="@+id/addInput" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,20 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/loadscreen_main_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mylogo">
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:indeterminate="true"
+        app:indicatorColor="#66BB6A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

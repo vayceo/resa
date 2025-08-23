@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+    android:layout_width="match_parent"
+    android:id="@+id/mainLayout"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rectangle_casino_dice"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+    <TextView
+        android:id="@+id/tableCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Стол 3"
+        android:fontFamily="@font/visby_round_cf_extra_bold"
+        android:includeFontPadding="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        android:textFontWeight="700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="До конца раунда: 15 сек."
+        android:includeFontPadding="false"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/_6sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/tableCaption"
+        app:layout_constraintEnd_toEndOf="@+id/casino_dice_line" />
+
+    <TextView
+        android:id="@+id/dealerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Крупье: Oxra_Litvinenko [877]"
+        android:includeFontPadding="false"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/_6sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/tableCaption"
+        app:layout_constraintStart_toStartOf="@+id/casino_dice_line" />
+
+    <View
+        android:id="@+id/casino_dice_line"
+        android:layout_width="360dp"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/casino_dice_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableCaption" />
+
+    <TextView
+        android:id="@+id/betText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="Ставка: 70000 руб."
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableCaption" />
+
+    <TextView
+        android:id="@+id/bankText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="Общий банк: 280000 руб."
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/betText"
+        app:layout_constraintStart_toStartOf="@+id/betText"
+        app:layout_constraintTop_toBottomOf="@+id/betText" />
+
+
+    <TextView
+        android:id="@+id/myBalanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="Баланс: 250946"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bankText" />
+
+    <View
+        android:id="@+id/casino_dice_line2"
+        android:layout_width="360dp"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/casino_dice_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myBalanceText" />
+
+    <TextView
+        android:id="@+id/playerName1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="Hiyori_Sasaki"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/casino_dice_line2" />
+
+    <TextView
+        android:id="@+id/playerStatus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="++"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/playerName1" />
+
+    <TextView
+        android:id="@+id/playerName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="Hiyori_Sasaki"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerName1" />
+
+    <TextView
+        android:id="@+id/playerStatus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="++"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/playerName2" />
+
+    <TextView
+        android:id="@+id/playerName3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="Hiyori_Sasaki"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerName2" />
+
+    <TextView
+        android:id="@+id/playerStatus3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="++"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/playerName3" />
+
+    <TextView
+        android:id="@+id/playerName4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="Hiyori_Sasaki"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerName3" />
+    <TextView
+        android:id="@+id/playerStatus4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="++"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/playerName4" />
+
+    <TextView
+        android:id="@+id/playerName5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="Hiyori_Sasaki"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerName4" />
+    <TextView
+        android:id="@+id/playerStatus5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/din_pro_bold"
+        android:text="++"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/playerName5" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/makeBetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/yellow"
+        android:textColor="@color/white"
+        android:text="сделать ставку"
+        android:shadowColor="@color/black"
+        android:shadowRadius="30"
+        app:cornerRadius="15dp"
+        android:textSize="11dp"
+        app:layout_constraintStart_toStartOf="@+id/playerName5"
+        app:layout_constraintTop_toBottomOf="@+id/playerName5" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/diceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:shadowColor="@color/black"
+        android:shadowRadius="30"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/yellow"
+        android:text="бросить кости"
+        android:textSize="11dp"
+        app:cornerRadius="15dp"
+        app:layout_constraintStart_toEndOf="@+id/makeBetButton"
+        app:layout_constraintTop_toTopOf="@+id/makeBetButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/exitButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        android:layout_marginEnd="16dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/exit"
+        android:backgroundTint="@null"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

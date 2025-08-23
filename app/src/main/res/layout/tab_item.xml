@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/hassle_tab_item"
+    android:layout_width="match_parent"
+    android:layout_marginTop="1dp"
+    android:layout_height="@dimen/_17sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/players_list_border_item"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/player_id"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/_5sdp"
+
+            android:layout_weight="1"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/din_pro_black"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:text="999"
+            android:textSize="@dimen/_6sdp" />
+
+        <TextView
+            android:id="@+id/player_name"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/din_pro_black"
+            android:gravity="center_vertical"
+            android:text="Egor_PLaka"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_6sdp" />
+
+        <TextView
+            android:id="@+id/player_level"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/din_pro_black"
+            android:gravity="center_vertical"
+            android:text="5"
+            android:paddingStart="@dimen/_10sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_6sdp" />
+
+        <TextView
+            android:id="@+id/player_ping"
+            android:layout_width="@dimen/_5sdp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:includeFontPadding="false"
+            android:text="46"
+            android:fontFamily="@font/din_pro_black"
+            android:gravity="center_vertical"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_6sdp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

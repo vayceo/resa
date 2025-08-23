@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:visibility="visible"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/theft_progress_backbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/theft_progress_backbar" />
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:indeterminate="false"
+        android:max="30000"
+        android:progress="0"
+        android:progressDrawable="@drawable/theft_progressbar"
+        app:layout_constraintEnd_toEndOf="@+id/theft_progress_backbar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/theft_progress_backbar"
+        app:layout_constraintTop_toTopOf="@+id/theft_progress_backbar" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/theft_progress_backbar"
+        app:layout_constraintStart_toStartOf="@+id/theft_progress_backbar"
+        app:layout_constraintTop_toTopOf="@+id/theft_progress_backbar">
+
+        <ImageView
+            android:id="@+id/point"
+            android:layout_width="@dimen/_30sdp"
+            android:adjustViewBounds="true"
+            android:alpha="0.9"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            app:srcCompat="@drawable/samwill_gray" />
+
+    </LinearLayout>
+
+    <com.russia.launcher.ui.domain.ExpandableHeightGridView
+        android:id="@+id/levelsView"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:numColumns="10"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/theft_progress_backbar"
+        app:layout_constraintStart_toStartOf="@+id/theft_progress_backbar"
+        app:layout_constraintTop_toBottomOf="@+id/theft_progress_backbar"/>
+
+
+    <ImageView
+        android:id="@+id/mainButt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/theft_auto_main_btn"/>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

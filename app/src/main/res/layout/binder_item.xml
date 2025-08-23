@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_5sdp">
+
+    <ImageView
+        android:id="@+id/binder_bubble"
+        android:layout_width="@dimen/_113sdp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/message_bubble"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/binder_text"
+        android:layout_width="@dimen/_98sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:fontFamily="@font/visby_round_cf_extra_bold"
+        android:includeFontPadding="false"
+        android:singleLine="true"
+        android:text="/me показал пасcпорт"
+        android:textSize="@dimen/_6sdp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/binder_bubble"
+        app:layout_constraintStart_toStartOf="@+id/binder_bubble"
+        app:layout_constraintTop_toTopOf="@+id/binder_bubble" />
+    </androidx.constraintlayout.widget.ConstraintLayout>

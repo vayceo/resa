@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/magic_store_bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/fadingRecycle"
+        app:layout_constraintStart_toStartOf="@+id/fadingRecycle"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4CAF50"
+            android:text="Купить"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/infoButt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:backgroundTint="#FFC107"
+            android:text="Информация"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buyButton"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bronzeLayout"
+        android:layout_width="@dimen/_105sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:background="@drawable/magicstore_bronze_bg"
+        app:layout_constraintEnd_toStartOf="@+id/silverLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/bronzeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="100.000.000"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/silverLayout"
+        android:layout_width="@dimen/_105sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginEnd="16dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:background="@drawable/magicstore_silver_bg"
+        app:layout_constraintEnd_toStartOf="@+id/goldLayout"
+        app:layout_constraintTop_toTopOf="@+id/bronzeLayout">
+
+        <TextView
+            android:id="@+id/silverText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="100.000.000"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/goldLayout"
+        android:layout_width="@dimen/_105sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginEnd="16dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:background="@drawable/magicstore_gold_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bronzeLayout">
+
+        <TextView
+            android:id="@+id/goldText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="100.000.000"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.russia.game.gui.util.FadingEdgeLayout
+        android:id="@+id/fadingRecycle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_180sdp"
+        app:fel_edge="right|left"
+        app:fel_size_right="@dimen/_40sdp"
+        app:fel_size_left="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        app:layout_constraintBottom_toTopOf="@+id/categoriesLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/silverLayout">
+
+        <com.factor.bouncy.BouncyRecyclerView
+            android:id="@+id/recycle"
+            android:scrollbars="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.russia.game.gui.util.FadingEdgeLayout>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/categoriesLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/magicstore_cat_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/catItems"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:text="Предметы"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/catAnimals"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:text="Питомцы"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/catItems"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/catPotions"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:text="Зелья"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/catAnimals"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/catSkins"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:text="Скины"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/catPotions"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/catConsumables"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:text="Расходники"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/catSkins"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/exitButt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F44336"
+        android:textColor="@color/white"
+        android:text="Выход"
+        app:layout_constraintBottom_toBottomOf="@+id/categoriesLayout"
+        app:layout_constraintEnd_toEndOf="@+id/goldLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

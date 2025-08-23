@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingEnd="@dimen/_15sdp"
+    android:paddingStart="@dimen/_15sdp"
+    android:id="@+id/mainLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemLayout"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:background="@drawable/magicstore_item_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/cornersLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/magicstore_item_bg_corner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/itemImg"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_90sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/skin_test"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/itemText"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/din_pro_black"
+            android:shadowRadius="1"
+            android:shadowColor="@color/black"
+            android:text="Щит капитана америки"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/itemImg"
+            app:layout_constraintStart_toStartOf="@+id/itemImg"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/priceLayout"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_135sdp"
+        android:backgroundTint="#BDBDBD"
+        android:background="@drawable/magicstore_item_price_bg"
+        app:layout_constraintEnd_toEndOf="@+id/itemLayout"
+        app:layout_constraintStart_toStartOf="@+id/itemLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/priceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20.000"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/din_pro_black"
+            android:shadowColor="@color/black"
+            android:shadowRadius="2"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/priceIcon"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/priceIcon"
+            android:layout_width="@dimen/_17sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/magicstore_silver_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/priceText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/priceText"
+            app:layout_constraintTop_toTopOf="@+id/priceText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

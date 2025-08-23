@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/windowLayout"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/taxi_bg"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/driverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ttnorms_extrabold"
+            android:includeFontPadding="false"
+            android:text="Egor_Plakapenka"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/taxiProfileIcon"
+            app:layout_constraintTop_toTopOf="@+id/taxiProfileIcon" />
+
+        <ImageView
+            android:id="@+id/taxiProfileIcon"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/taxi_profile_icon"
+            app:layout_constraintBottom_toTopOf="@id/newOrderLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/salary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:includeFontPadding="false"
+            android:text="Заработано: 18.650 руб."
+            android:textSize="@dimen/_9sdp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/taxiProfileIcon"
+            app:layout_constraintTop_toBottomOf="@+id/driverName" />
+
+        <TextView
+            android:id="@+id/countRide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/visby_round_cf_extra_bold"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/_9sdp"
+            android:text="Поездок: 6"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/taxiProfileIcon"
+            app:layout_constraintTop_toBottomOf="@+id/salary" />
+
+        <TextView
+            android:id="@+id/tatifs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/ttnorms_extrabold"
+            android:includeFontPadding="false"
+            android:text="Тариф: Эконом"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/newOrderLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tatifs"
+            app:layout_constraintStart_toStartOf="@+id/taxiProfileIcon">
+
+            <TextView
+                android:id="@+id/newOrderDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:includeFontPadding="false"
+                android:text="Подача: 1км (~3 мин.)"
+                android:textColor="#C9FFFFFF"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/acceptOrderLayout"
+                app:layout_constraintEnd_toEndOf="@+id/acceptOrderLayout"
+                app:layout_constraintStart_toStartOf="@+id/acceptOrderLayout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/acceptOrderLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.skydoves.progressview.ProgressView
+                    android:id="@+id/newOrderProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:progressView_autoAnimate="false"
+                    app:progressView_colorBackground="#80918F8F"
+                    app:progressView_colorProgress="#66BB6A"
+                    app:progressView_max="100"
+                    app:progressView_min="0"
+                    app:progressView_progress="100"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/acceptOrderClicableArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/newOrderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="Принять"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/newOrderProgress"
+                    app:layout_constraintEnd_toEndOf="@+id/newOrderProgress"
+                    app:layout_constraintStart_toStartOf="@+id/newOrderProgress"
+                    app:layout_constraintTop_toTopOf="@+id/newOrderProgress" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/toggleButt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/taxi_toggle_butt"
+        app:layout_constraintBottom_toBottomOf="@+id/windowLayout"
+        app:layout_constraintEnd_toStartOf="@+id/windowLayout"
+        app:layout_constraintTop_toTopOf="@+id/windowLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

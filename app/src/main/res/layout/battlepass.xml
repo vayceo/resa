@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/battlepass_bg"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
+    <ImageView
+        android:id="@+id/exitButt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/cross_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/logoTopGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:src="@drawable/battlepass_logo"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/logoTopGl" />
+
+    <TextView
+        android:id="@+id/logoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/din_pro_black_italic"
+        android:text="LIVE PASS"
+        android:textAllCaps="true"
+        android:textSize="@dimen/_22sdp"
+        android:textColor="#EFF558"
+        app:layout_constraintBottom_toTopOf="@+id/endDate"
+        app:layout_constraintStart_toEndOf="@+id/logo"
+        app:layout_constraintTop_toTopOf="@+id/logoTopGl"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/endDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ttnorms_medium"
+        android:text="Дата окончания: 1 марта 2024"
+        android:textColor="#72FFFFFF"
+        android:textSize="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/logo"
+        app:layout_constraintStart_toStartOf="@+id/logoText"
+        app:layout_constraintTop_toBottomOf="@+id/logoText" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/categoriesLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@drawable/magicstore_cat_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/endDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/logo"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/mainPageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/magicstore_cat_active_bg"
+            android:backgroundTint="#66BB6A"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:text="Главная"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tasksPageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center"
+            android:backgroundTint="#66BB6A"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:text="Задания"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/mainPageButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ratePageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat_bold"
+            android:backgroundTint="#66BB6A"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:text="Рейтинг"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tasksPageButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/contentTopGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <!-- ================ MAIN =========== !-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainPageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contentTopGl">
+
+        <include layout="@layout/battlepass_main" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ================ TASKS =========== !-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tasksPageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endDate">
+
+        <include layout="@layout/battlepass_tasks" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ================ RATE =========== !-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ratePageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endDate">
+
+        <include layout="@layout/battlepass_rate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

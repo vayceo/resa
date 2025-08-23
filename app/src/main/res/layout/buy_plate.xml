@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/plate_bg"
+    android:clickable="true"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
+    <TextView
+        android:id="@+id/caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/din_pro_black"
+        android:text="Регистрация гос. знака автомобиля"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/typeRu"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginStart="@dimen/_35sdp"
+        android:background="@drawable/plate_type_bg"
+        app:layout_constraintBottom_toTopOf="@+id/typeUa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/caption">
+
+        <ImageView
+            android:id="@+id/ruIcon"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="false"
+            android:background="@drawable/plate_rus_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/din_pro_black"
+            android:text="Россия"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/ruIcon"
+            app:layout_constraintStart_toStartOf="@+id/ruIcon"
+            app:layout_constraintTop_toBottomOf="@+id/ruIcon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/typeUa"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/plate_type_bg"
+        app:layout_constraintBottom_toTopOf="@+id/typeBy"
+        app:layout_constraintStart_toStartOf="@+id/typeRu"
+        app:layout_constraintTop_toBottomOf="@+id/typeRu">
+
+        <ImageView
+            android:id="@+id/UkrIcon"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="false"
+            android:background="@drawable/plate_ua_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/din_pro_black"
+            android:text="Украина"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/UkrIcon"
+            app:layout_constraintStart_toStartOf="@+id/UkrIcon"
+            app:layout_constraintTop_toBottomOf="@+id/UkrIcon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/typeBy"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/plate_type_bg"
+        app:layout_constraintBottom_toTopOf="@+id/typeKz"
+        app:layout_constraintStart_toStartOf="@+id/typeUa"
+        app:layout_constraintTop_toBottomOf="@+id/typeUa">
+
+        <ImageView
+            android:id="@+id/byIcon"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="false"
+            android:background="@drawable/plate_by_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/din_pro_black"
+            android:text="Беларусь"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/byIcon"
+            app:layout_constraintStart_toStartOf="@+id/byIcon"
+            app:layout_constraintTop_toBottomOf="@+id/byIcon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/typeKz"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/plate_type_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/typeBy"
+        app:layout_constraintTop_toBottomOf="@+id/typeBy">
+
+        <ImageView
+            android:id="@+id/kzIcon"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="false"
+            android:background="@drawable/plate_kz_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/din_pro_black"
+            android:text="Казахстан"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/kzIcon"
+            app:layout_constraintStart_toStartOf="@+id/kzIcon"
+            app:layout_constraintTop_toBottomOf="@+id/kzIcon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/plateImage"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:adjustViewBounds="true"
+
+        app:layout_constraintEnd_toEndOf="@+id/caption"
+        app:layout_constraintStart_toStartOf="@+id/caption"
+        app:layout_constraintTop_toBottomOf="@+id/caption" />
+
+    <TextView
+        android:id="@+id/randomPriceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/akrobat_bold"
+        android:text="Случайный вариант \nза 3.750 руб."
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/refreshButton"
+        app:layout_constraintStart_toEndOf="@+id/refreshButton"
+        app:layout_constraintTop_toTopOf="@+id/refreshButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buyButton"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#4CAF50"
+        android:text="Оплатить"
+        android:textColor="@color/white"
+        app:cornerRadius="@dimen/_7sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/caption"
+        app:layout_constraintStart_toStartOf="@+id/caption" />
+
+    <TextView
+        android:id="@+id/buyPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/akrobat_bold"
+        android:text="Купить номер \nза 3.750 руб."
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/buyButton"
+        app:layout_constraintStart_toEndOf="@+id/buyButton"
+        app:layout_constraintTop_toTopOf="@+id/buyButton" />
+
+    <ImageView
+        android:id="@+id/refreshButton"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/refresh_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/plateImage"
+        app:layout_constraintStart_toEndOf="@+id/plateImage"
+        app:layout_constraintTop_toTopOf="@+id/plateImage" />
+
+    <TextView
+        android:id="@+id/warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:fontFamily="@font/roboto_black"
+        android:shadowColor="@color/black"
+        android:shadowRadius="1"
+        android:text="Неверный формат!"
+        android:textColor="#EF5350"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintBottom_toTopOf="@+id/input"
+        app:layout_constraintStart_toStartOf="@+id/input" />
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:autofillHints="no"
+        android:background="@drawable/buy_plate_input_bg"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 "
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center_vertical"
+        android:hint="Нажмите для ввода..."
+        android:imeOptions="flagNoFullscreen|actionSend"
+        android:importantForAutofill="no"
+        android:inputType="textCapCharacters|textNoSuggestions"
+        android:lines="1"
+        android:maxLines="1"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_4sdp"
+        android:singleLine="true"
+        android:textColor="#ffffffff"
+        android:textColorHint="#6DF4F4F4"
+        android:textCursorDrawable="@drawable/text_cursor"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="@+id/format"
+        app:layout_constraintTop_toBottomOf="@+id/format"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <TextView
+        android:id="@+id/format"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/buy_plate_text_bg"
+        android:fontFamily="@font/din_pro_black"
+        android:includeFontPadding="false"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:text="Формат номера:\nAAAAAA 12"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/symbolsAllowed"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/typeUa"
+        app:layout_constraintStart_toStartOf="@+id/caption"
+        app:layout_constraintTop_toTopOf="@+id/symbolsAllowed" />
+
+    <TextView
+        android:id="@+id/symbolsAllowed"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:background="@drawable/buy_plate_text_bg"
+        android:fontFamily="@font/din_pro_black"
+        android:includeFontPadding="false"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:text="Разрешённые символы:\nA B C E H K M O P T X Y (английские)"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/caption"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/format"
+        app:layout_constraintTop_toBottomOf="@+id/plateImage" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/checkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="#03A9F4"
+        android:text="Проверить"
+        android:textSize="@dimen/_8sdp"
+        app:cornerRadius="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/input"
+        app:layout_constraintStart_toEndOf="@+id/input"
+        app:layout_constraintTop_toTopOf="@+id/input" />
+
+    <ImageView
+        android:id="@+id/exitButton"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/cross_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

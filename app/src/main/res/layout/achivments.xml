@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/achivmentsMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/achivments_bg"
+    android:visibility="visible">
+
+    <TextView
+        android:id="@+id/achivmentsCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/visby_round_cf_extra_bold"
+        android:includeFontPadding="false"
+        android:shadowColor="@color/white"
+        android:shadowRadius="5"
+        android:text="Достижения:"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_25sdp"
+        app:layout_constraintStart_toStartOf="@+id/achivmentsRecycle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/achivmentsProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:fontFamily="@font/visby_round_cf_extra_bold"
+        android:text="Выполнено: 17 из 21"
+        android:textSize="@dimen/_13sdp"
+        android:textColor="#FFF176"
+        app:layout_constraintBottom_toTopOf="@+id/achivmentsAvailableLc"
+        app:layout_constraintEnd_toStartOf="@+id/achivmentsExitButt"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/achivmentsAvailableLc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/visby_round_cf_extra_bold"
+        android:text="Доступно: 5.550 LC"
+        android:textSize="@dimen/_10sdp"
+        android:textColor="#DCE775"
+        app:layout_constraintBottom_toTopOf="@+id/achivmentsRecycle"
+        app:layout_constraintEnd_toEndOf="@+id/achivmentsProgress"
+        app:layout_constraintTop_toBottomOf="@+id/achivmentsProgress" />
+
+    <com.factor.bouncy.BouncyRecyclerView
+        android:id="@+id/achivmentsRecycle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_260sdp"
+        android:layout_marginStart="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_35sdp"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/achivmentsCaption" />
+
+    <ImageView
+        android:id="@+id/achivmentsExitButt"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/cross_bold"
+        app:layout_constraintBottom_toBottomOf="@+id/achivmentsCaption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/achivmentsCaption" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

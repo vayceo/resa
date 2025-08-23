@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:background="@drawable/casino_lucky_wheel_bg"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/bottomGl"
+        app:layout_constraintHeight_percent="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.15">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startTextGl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <TextView
+            android:id="@+id/myPointsText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.7"
+            app:layout_constraintHeight_percent="0.2"
+            android:text="Ваши очки: 0"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:autoSizeMinTextSize="@dimen/_5sdp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="@dimen/_8sdp"
+            app:layout_constraintBottom_toTopOf="@+id/enemyPointsText"
+            app:layout_constraintStart_toStartOf="@+id/startTextGl"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/enemyPointsText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.8"
+            app:layout_constraintHeight_percent="0.2"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="Вражеские: 214687"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="@dimen/_5sdp"
+            android:autoSizeMaxTextSize="@dimen/_8sdp"
+            app:layout_constraintBottom_toTopOf="@+id/timeBg"
+            app:layout_constraintStart_toStartOf="@+id/myPointsText"
+            app:layout_constraintTop_toBottomOf="@+id/myPointsText" />
+
+        <View
+            android:id="@+id/timeBg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.3"
+            android:background="@drawable/yellow_gradient_rounded"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.6"
+            app:layout_constraintHeight_percent="0.21"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="6000 секунд"
+            android:textColor="@color/white"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="@dimen/_11sdp"
+            android:autoSizeMinTextSize="@dimen/_7sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/timeBg"
+            app:layout_constraintEnd_toEndOf="@+id/timeBg"
+            app:layout_constraintStart_toStartOf="@+id/timeBg"
+            app:layout_constraintTop_toTopOf="@+id/timeBg" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

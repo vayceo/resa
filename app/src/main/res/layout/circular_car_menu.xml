@@ -1,0 +1,258 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/radialMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/radialCellBg1"
+            android:layout_width="@dimen/_94sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/radial_bg_2cell"
+            app:layout_constraintBottom_toTopOf="@+id/radialCellBg3"
+            app:layout_constraintEnd_toStartOf="@+id/radialCellBg2"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <ImageView
+            android:id="@+id/sdaf"
+            android:layout_width="150dp"
+            android:layout_height="167dp"
+            android:layout_marginEnd="@dimen/_69sdp"
+            android:rotation="180"
+            android:scaleX="-1"
+            android:src="@drawable/radial_bg_submenu4"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/radialCellBg1"
+            app:layout_constraintEnd_toEndOf="@+id/radialCellBg1" />
+
+        <ImageView
+            android:id="@+id/radialLock"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="40dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/radial_key_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/radialCellBg1"
+            app:layout_constraintEnd_toEndOf="@+id/radialCellBg1"
+            app:layout_constraintTop_toTopOf="@+id/radialCellBg1" />
+
+        <!--    <ImageView-->
+        <!--        android:id="@+id/button_parking"-->
+        <!--        android:layout_width="@dimen/_25sdp"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:adjustViewBounds="true"-->
+        <!--        android:layout_marginStart="@dimen/_14sdp"-->
+        <!--        android:layout_marginBottom="@dimen/_5sdp"-->
+        <!--        android:src="@drawable/radial_doors_icon"-->
+        <!--        app:layout_constraintBottom_toBottomOf="@+id/bg_parking_key"-->
+        <!--        app:layout_constraintStart_toStartOf="@+id/bg_parking_key" />-->
+
+        <ImageView
+            android:id="@+id/radialCellBg3"
+            android:layout_width="@dimen/_94sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_1sdp"
+            android:adjustViewBounds="true"
+            android:rotation="-90"
+            android:src="@drawable/radial_bg_2cell"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/radialCellBg4"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radialCellBg1" />
+
+        <!--    <ImageView-->
+        <!--        android:id="@+id/button_turbo"-->
+        <!--        android:layout_width="@dimen/_28sdp"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginStart="@dimen/_17sdp"-->
+        <!--        android:adjustViewBounds="true"-->
+        <!--        android:layout_marginTop="@dimen/_10sdp"-->
+        <!--        android:tint="#D32F2F"-->
+        <!--        android:src="@drawable/radial_mode_icon"-->
+        <!--        app:layout_constraintStart_toStartOf="@+id/radialCellBg3"-->
+        <!--        app:layout_constraintTop_toTopOf="@+id/radialCellBg3" />-->
+
+        <ImageView
+            android:id="@+id/radialEngine"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="5dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="15dp"
+            android:src="@drawable/radial_engine_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/radialCellBg3"
+            app:layout_constraintEnd_toEndOf="@+id/radialCellBg3"
+            app:layout_constraintTop_toTopOf="@+id/radialCellBg3" />
+
+        <ImageView
+            android:id="@+id/bg_turbo_submenu"
+            android:layout_width="150dp"
+            android:layout_height="167dp"
+            android:layout_marginEnd="90dp"
+            android:src="@drawable/radial_bg_submenu4"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/radialCellBg3"
+            app:layout_constraintTop_toTopOf="@+id/radialCellBg3" />
+
+
+        <ImageView
+            android:id="@+id/radialCellBg2"
+            android:layout_width="@dimen/_94sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:adjustViewBounds="true"
+            android:rotation="90"
+            android:src="@drawable/radial_bg_2cell"
+            app:layout_constraintBottom_toTopOf="@+id/radialCellBg4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/radialCellBg1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <ImageView
+            android:id="@+id/radialBoot"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/radial_trunk"
+            app:layout_constraintStart_toStartOf="@+id/radialCellBg2"
+            app:layout_constraintTop_toTopOf="@+id/radialCellBg2" />
+
+        <ImageView
+            android:id="@+id/radialLightsCategoty"
+            android:layout_width="70dp"
+            android:layout_height="65dp"
+            android:layout_marginEnd="10dp"
+            android:paddingStart="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/radial_light_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/radialCellBg2"
+            app:layout_constraintEnd_toEndOf="@+id/radialCellBg2" />
+
+        <ImageView
+            android:id="@+id/radialLightsCategotyBg"
+            android:layout_width="@dimen/_116sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_70sdp"
+            android:adjustViewBounds="true"
+            android:rotation="180"
+            android:src="@drawable/radial_bg_submenu4"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/radialCellBg2"
+            app:layout_constraintStart_toStartOf="@+id/radialCellBg2" />
+
+        <ImageView
+            android:id="@+id/radialNeon"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_55sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/radial_neon_icon"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/radialLightsCategotyBg"
+            app:layout_constraintTop_toTopOf="@+id/radialLightsCategotyBg" />
+
+        <ImageView
+            android:id="@+id/radialNightLights"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/radial_high_light_not_checked"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/radialLightsCategotyBg"
+            app:layout_constraintTop_toTopOf="@+id/radialLightsCategotyBg" />
+
+        <ImageView
+            android:id="@+id/radialLight"
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_34sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/radial_headlights_icon"
+            android:tint="#8BC34A"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/radialLightsCategotyBg"
+            app:layout_constraintStart_toStartOf="@+id/radialLightsCategotyBg" />
+
+        <ImageView
+            android:id="@+id/radialStrob"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/radial_stroboscope_icon"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/radialLightsCategotyBg"
+            app:layout_constraintEnd_toEndOf="@+id/radialLightsCategotyBg" />
+
+        <ImageView
+            android:id="@+id/radialCellBg4"
+            android:layout_width="@dimen/_94sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:adjustViewBounds="true"
+            android:rotation="180"
+            android:src="@drawable/radial_bg_2cell"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/radialCellBg3"
+            app:layout_constraintTop_toBottomOf="@+id/radialCellBg2" />
+
+        <ImageView
+            android:id="@+id/radialBonnet"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_11sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/radial_bonnet"
+            app:layout_constraintEnd_toEndOf="@+id/radialCellBg4"
+            app:layout_constraintTop_toTopOf="@+id/radialCellBg4" />
+
+        <ImageView
+            android:id="@+id/buttonMusic"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="40dp"
+            android:adjustViewBounds="true"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/radial_music"
+            app:layout_constraintBottom_toBottomOf="@+id/radialCellBg4"
+            app:layout_constraintEnd_toStartOf="@+id/radialBonnet"
+            app:layout_constraintStart_toStartOf="@+id/radialCellBg4"
+            app:layout_constraintTop_toTopOf="@+id/radialCellBg4" />
+
+        <ImageView
+            android:id="@+id/radialCloseButt"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/radial_close"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

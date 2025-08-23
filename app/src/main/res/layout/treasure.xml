@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+    android:visibility="visible"
+    android:id="@+id/treasureMainLayout"
+    android:background="@drawable/spin_box_bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/spinBoxLayout"
+        android:layout_width="@dimen/_410sdp"
+        android:layout_height="@dimen/_65sdp"
+        android:clickable="false"
+        android:layout_marginStart="@dimen/_100sdp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/_100sdp"
+        android:background="@drawable/treasure_spiner_box"
+        android:nestedScrollingEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/treasureSpinnerRecycle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:clickable="false"
+            android:overScrollMode="never"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:src="@drawable/treasure_arrow"
+        app:layout_constraintEnd_toEndOf="@+id/spinBoxLayout"
+        app:layout_constraintStart_toStartOf="@+id/spinBoxLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:rotation="180"
+        android:src="@drawable/treasure_arrow"
+        app:layout_constraintBottom_toTopOf="@+id/treasureOpenButt"
+        app:layout_constraintEnd_toEndOf="@+id/spinBoxLayout"
+        app:layout_constraintStart_toStartOf="@+id/spinBoxLayout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/treasureOpenButt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/yellow"
+        android:text="Открыть"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinBoxLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/spinPrizesListCaption"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:background="@drawable/treasure_prizelist_top_caption"
+        app:layout_constraintEnd_toEndOf="@+id/spinPrizesListRecycle"
+        app:layout_constraintStart_toStartOf="@+id/spinPrizesListRecycle"
+        app:layout_constraintTop_toBottomOf="@id/treasureOpenButt">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="Возможные призы:"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/spinPrizesListRecycle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_140sdp"
+        android:background="@drawable/treasure_prizes_list_bg"
+        android:scrollbars="vertical"
+        android:paddingBottom="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinPrizesListCaption" />
+
+    <TextView
+        android:id="@+id/treasureExitButt"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/arrow_back"
+        android:fontFamily="@font/pt_root_ui_medium"
+        android:gravity="center"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:text="Назад                 "
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
