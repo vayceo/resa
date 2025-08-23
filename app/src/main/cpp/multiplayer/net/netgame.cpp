@@ -1205,14 +1205,15 @@ void CNetGame::Packet_CustomRPC(Packet *p) {
             bs.Read(link);
             bs.Read(repeat);
 
-            if(link.size() <= 3) {
+            // TODO: FIX CRASH
+            /*if(link.size() <= 3) {
                 DLOG("StopIndividualStream");
                 CAudioStreamPool::StopIndividualStream();
                 return;
             }
 
             DLOG("PlayIndividualStream");
-            CAudioStreamPool::PlayIndividualStream(link, repeat);
+            CAudioStreamPool::PlayIndividualStream(link, repeat);*/
             break;
         }
 

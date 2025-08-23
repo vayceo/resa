@@ -244,14 +244,15 @@ void CVehicleSamp::toggleRightTurnLight(bool toggle)
 
 	if(!toggle) return;
 
-	m_pRightFrontTurnLighter = CGame::NewObject(19294, 0.0, 0.0, 0.0, vec, 300.0);
+    // TODO: CoronaRegister
+	/*m_pRightFrontTurnLighter = CGame::NewObject(19294, 0.0, 0.0, 0.0, vec, 300.0);
     m_pRightFrontTurnLighter->AttachToVehicle(getSampId(), &vecFront, &vecFront);
 
 	m_pRightRearTurnLighter = CGame::NewObject(19294, 0.0, 0.0, 0.0, vec, 300.0);
 	m_pRightRearTurnLighter->AttachToVehicle(getSampId(), &vecRear, &vecRear);
 
 	m_pRightFrontTurnLighter->ProcessAttachToVehicle(this);
-	m_pRightRearTurnLighter->ProcessAttachToVehicle(this);
+	m_pRightRearTurnLighter->ProcessAttachToVehicle(this);*/
 }
 
 void CVehicleSamp::toggleLeftTurnLight(bool toggle)
@@ -289,14 +290,15 @@ void CVehicleSamp::toggleLeftTurnLight(bool toggle)
 
     if(!toggle) return;
 
-    m_pLeftFrontTurnLighter = CGame::NewObject(19294, 0.0, 0.0, 0.0, vec, 300.0);
+    // TODO: CoronaRegister
+    /*m_pLeftFrontTurnLighter = CGame::NewObject(19294, 0.0, 0.0, 0.0, vec, 300.0);
     m_pLeftFrontTurnLighter->AttachToVehicle(getSampId(), &vecFront, &vecFront);
 
     m_pLeftRearTurnLighter = CGame::NewObject(19294, 0.0, 0.0, 0.0, vec, 300.0);
     m_pLeftRearTurnLighter->AttachToVehicle(getSampId(), &vecRear, &vecRear);
 
     m_pLeftFrontTurnLighter->ProcessAttachToVehicle(this);
-    m_pLeftRearTurnLighter->ProcessAttachToVehicle(this);
+    m_pLeftRearTurnLighter->ProcessAttachToVehicle(this);*/
 }
 
 VEHICLEID CVehicleSamp::getSampId()
