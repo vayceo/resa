@@ -170,9 +170,8 @@ void CNetGame::Process() {
 
             CCamera::SetPosition(-314.0f, 160.0f, 39.0f, 0.0f, 0.0f, 0.0f);
             CCamera::LookAtPoint(-310.0f, 157.0f, 39.0f, 2);
-            CHUD::toggleAll(true);
             CGame::SetWorldWeather(m_byteWeather);
-            //	CGame::DisplayWidgets(false);
+            CGame::DisplayWidgets(false);
         }
     }
 

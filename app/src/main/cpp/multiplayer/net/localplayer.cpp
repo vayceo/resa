@@ -278,7 +278,7 @@ bool CLocalPlayer::Process()
 		needDrawableChat = false;
 	}
 
-	CHUD::toggleAll(true, true);
+	CHUD::toggleAll(needDrawableHud, needDrawableChat);
 
     return true;
 }
