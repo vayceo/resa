@@ -141,7 +141,7 @@ void CWidgetButton__Enabled_hook(CWidgetButton* thiz, bool bEnabled) {
 
 void CWidgetGta::InjectHooks() {
     CHook::InstallPLT(g_libGTASA + (VER_x32 ? 0x66486C : 0x82A150), &CWidgetRegionLook__Update_hook, &CWidgetRegionLook__Update);
-    CHook::InlineHook("_ZN21CWidgetButtonEnterCar4DrawEv", &CWidgetButtonEnterCar__Draw_hook, &CWidgetButtonEnterCar__Draw);
+    //CHook::InlineHook("_ZN21CWidgetButtonEnterCar4DrawEv", &CWidgetButtonEnterCar__Draw_hook, &CWidgetButtonEnterCar__Draw); // LOL, for what? xD
     CHook::InlineHook("_ZN7CWidget10SetEnabledEb", &CWidgetButton__Enabled_hook, &CWidgetButton__Enabled);
     CHook::InstallPLT(g_libGTASA + (VER_x32 ? 0x00671424 : 0x842408), &CWidgetButton__Update_hook, &CWidgetButton__Update);
 }

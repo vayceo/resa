@@ -335,53 +335,6 @@ int *LoadFullTexture_hook(TextureDatabaseRuntime *thiz, unsigned int a2)
 
     return LoadFullTexture(thiz, a2);
 }
-//
-void (*RLEDecompress)(uint8_t* pDest, size_t uiDestSize, uint8_t const* pSrc, size_t uiSegSize, uint32_t uiEscape);
-void RLEDecompress_hook(uint8_t* pDest, size_t uiDestSize, const uint8_t* pSrc, size_t uiSegSize, uint32_t uiEscape) {
-    if (!pDest || !pSrc || uiDestSize == 0 || uiSegSize == 0) {
-		// Обработка некорректных входных данных или размеров
-		// Здесь можно сгенерировать исключение или вернуть код ошибки
-		return;
-	}
-
-	const uint8_t* pTempSrc = pSrc;
-	const uint8_t* const pEndOfDest = pDest + uiDestSize;
-	const uint8_t* const pEndOfSrc = pSrc + dwRLEDecompressSourceSize; // Предполагается, что dwRLEDecompressSourceSize определено правильно
-
-	try {
-		while (pDest < pEndOfDest && pTempSrc < pEndOfSrc) {
-			if (*pTempSrc == uiEscape) {
-				if (pTempSrc + 1 >= pEndOfSrc || pTempSrc[1] == 0 || pTempSrc + 2 + uiSegSize > pEndOfSrc) {
-					// Обработка ошибки, неверное значение ucCurSeg или недостаточно данных в исходном буфере
-					throw std::runtime_error("RLE ERROR 1");
-				}
-
-				uint8_t ucCurSeg = pTempSrc[1];
-				while (ucCurSeg--) {
-					if (pDest + uiSegSize > pEndOfDest) {
-						// Обработка ошибки, недостаточно места в целевом буфере
-						throw std::runtime_error("RLE ERROR 2");
-					}
-					memcpy(pDest, pTempSrc + 2, uiSegSize);
-					pDest += uiSegSize;
-				}
-				pTempSrc += 2 + uiSegSize;
-			} else {
-				if (pDest + uiSegSize > pEndOfDest || pTempSrc + uiSegSize > pEndOfSrc) {
-					// Обработка ошибки, недостаточно данных в исходном буфере или недостаточно места в целевом буфере
-					throw std::runtime_error("RLE ERROR 3");
-				}
-				memcpy(pDest, pTempSrc, uiSegSize);
-				pDest += uiSegSize;
-				pTempSrc += uiSegSize;
-			}
-		}
-
-		dwRLEDecompressSourceSize = 0;
-	} catch (const std::exception& e) {
-		DLOG("%s", e.what());
-	}
-}
 
 int (*CustomPipeRenderCB)(uintptr_t resEntry, uintptr_t object, uint8_t type, uint32_t flags);
 int CustomPipeRenderCB_hook(uintptr_t resEntry, uintptr_t object, uint8_t type, uint32_t flags)
@@ -1648,7 +1601,6 @@ int CRadar__SetCoordBlip_hook(int r0, float X, float Y, float Z, int r4, int r5,
 
 void InstallHooks()
 {
-    // вода из пожарки
     CHook::InstallPLT(g_libGTASA + (VER_x32 ? 0x66F91C : 0x83F8A0), &CFireManager__ExtinguishPointWithWater_hook, &CFireManager__ExtinguishPointWithWater);
 
 	// retexture
@@ -1656,8 +1608,7 @@ void InstallHooks()
 
 	CHook::Redirect("_Z13RenderEffectsv", &RenderEffects);
 
-	// update hud :C
-	CHook::InlineHook("_ZN7CWeapon4FireEP7CEntityP7CVectorS3_S1_S3_S3_", &CWeapon__Fire_hook, &CWeapon__Fire); // hud update. mb sync suda podkinut'?
+	CHook::InlineHook("_ZN7CWeapon4FireEP7CEntityP7CVectorS3_S1_S3_S3_", &CWeapon__Fire_hook, &CWeapon__Fire);
 
     CHook::InlineHook("_ZN6CRadar12SetCoordBlipE9eBlipType7CVectorj12eBlipDisplayPc", &CRadar__SetCoordBlip_hook, &CRadar__SetCoordBlip);
 
@@ -1669,6 +1620,7 @@ void InstallHooks()
 	// no fall bike
 	CHook::InlineHook("_ZNK18CEventKnockOffBike10AffectsPedEP4CPed", &CEventKnockOffBike__AffectsPed_hook, &CEventKnockOffBike__AffectsPed);
 
+    // TODO: FIX
 	// Bullet sync
     CHook::InlineHook("_ZN7CWeapon14FireInstantHitEP7CEntityP7CVectorS3_S1_S3_S3_bb", &CWeapon__FireInstantHit_hook, &CWeapon__FireInstantHit);
 	CHook::InlineHook("_ZN7CWeapon10FireSniperEP4CPedP7CEntityP7CVector", &CWeapon__FireSniper_hook, &CWeapon__FireSniper);
