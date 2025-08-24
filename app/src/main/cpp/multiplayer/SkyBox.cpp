@@ -15,11 +15,42 @@ extern CGUI *pGUI;
 
 void CSkyBox::Init()
 {
-
+    if (!CModelInfo::GetModelInfo(SKYBOX_OBJECT_ID)) {
+        Log("Error CSkyBox::Init. No mode %d", SKYBOX_OBJECT_ID);
+        assert(0); // hm, okay..
+    }
+    m_pSkyObject = CreateObjectScaled(SKYBOX_OBJECT_ID, 0.8f);
 }
 
+// TODO: fix crash
 void CSkyBox::Process() {
+    /*if(!m_pSkyObject)
+        return CSkyBox::Init();
 
+    RwMatrix matrix;
+
+    m_pSkyObject->m_pEntity->GetMatrix(&matrix);
+
+    matrix.pos = TheCamera.GetPosition();
+
+    CVector axis{0.0f, 0.0f, 1.0f};
+    RwMatrixRotate(&matrix, &axis, m_fRotSpeed * CTimer::ms_fTimeScale);
+
+    m_bNeedRender = true;
+
+    ReTexture();
+    
+    m_pSkyObject->m_pEntity->Remove();
+
+    m_pSkyObject->m_pEntity->SetMatrix((CMatrix&)matrix);
+    m_pSkyObject->m_pEntity->UpdateRW();
+    m_pSkyObject->m_pEntity->UpdateRwFrame();
+
+    m_pSkyObject->m_pEntity->Add();
+
+    CUtil::RenderEntity(m_pSkyObject->m_pEntity);
+
+    m_bNeedRender = false;*/
 }
 
 CObjectSamp* CSkyBox::CreateObjectScaled(int iModel, float fScale)
@@ -60,9 +91,9 @@ void CSkyBox::ReTexture()
     {
         m_dwChangeTime = iHours;
 
-        if (iHours >= 0 && iHours < 6 || iHours > 18 ) { // ����
+        if (iHours >= 0 && iHours < 6 || iHours > 18 ) {
             SetTexture("skybox_1");
-        } else if (iHours >= 6 && iHours < 8) { // �������
+        } else if (iHours >= 6 && iHours < 8) {
             SetTexture("skybox_2");
         } else if (iHours >= 8 && iHours < 11) {
             SetTexture("skybox_3");
@@ -72,16 +103,11 @@ void CSkyBox::ReTexture()
             SetTexture("skybox_5");
         } else if (iHours == 17) {
             SetTexture("skybox_6");
-        } else if (iHours == 18) { // �����
+        } else if (iHours == 18) {
             SetTexture("skybox_7");
         }
-//        else if (iHours == 20) { // ����� 2
-//            SetTexture("skybox_8");
-//        }
-
 
     }
-    // ---
 
     auto pAtomic = m_pSkyObject->m_pEntity->m_pRwObject;
 
@@ -154,4 +180,3 @@ CObjectSamp *CSkyBox::GetSkyObject()
 {
     return m_pSkyObject;
 }
-

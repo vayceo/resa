@@ -77,21 +77,20 @@ void CDebugInfo::Draw()
 			pos = ImVec2(pGUI->ScaleX(40.0f), pGUI->ScaleY(1080.0f - pGUI->GetFontSize() * 8));
 			pGUI->RenderText(pos, (ImU32)0xFFFFFFFF, true, &szStrPos[0]);
 		}
-		//Log("pools = %d mem = %d", GetPedPoolGta()->GetNoOfUsedSpaces(), totalAllocatedMB);
-//		char debugPools[250];
-//		snprintf(&debugPools[0], sizeof(debugPools), "NSingle: %d; NDouble: %d; Peds: %d; Veh's: %d; Obj: %d; EntryInf: %d; Dummies: %d, Buildings: %d",
-//				 GetPtrNodeSingleLinkPool()->GetNoOfUsedSpaces(),
-//				 GetPtrNodeDoubleLinkPool()->GetNoOfUsedSpaces(),
-//				 GetPedPoolGta()->GetNoOfUsedSpaces(),
-//				 GetVehiclePoolGta()->GetNoOfUsedSpaces(),
-//				 GetObjectPoolGta()->GetNoOfUsedSpaces(),
-//				 GetEntryInfoNodePool()->GetNoOfUsedSpaces(),
-//				 GetDummyPool()->GetNoOfUsedSpaces(),
-//				 GetBuildingPool()->GetNoOfUsedSpaces()
-//				 );
-//
-//		pos = ImVec2(pGUI->ScaleX(40.0f), pGUI->ScaleY(1080.0f - pGUI->GetFontSize() * 1));
-//		pGUI->RenderText(pos, (ImU32)0xFFFFFFFF, true, &debugPools[0]);
+		char debugPools[250];
+		snprintf(&debugPools[0], sizeof(debugPools), "NSingle: %d; NDouble: %d; Peds: %d; Veh's: %d; Obj: %d; EntryInf: %d; Dummies: %d, Buildings: %d",
+				 GetPtrNodeSingleLinkPool()->GetNoOfUsedSpaces(),
+				 GetPtrNodeDoubleLinkPool()->GetNoOfUsedSpaces(),
+				 GetPedPoolGta()->GetNoOfUsedSpaces(),
+				 GetVehiclePoolGta()->GetNoOfUsedSpaces(),
+				 GetObjectPoolGta()->GetNoOfUsedSpaces(),
+				 GetEntryInfoNodePool()->GetNoOfUsedSpaces(),
+				 GetDummyPool()->GetNoOfUsedSpaces(),
+				 GetBuildingPool()->GetNoOfUsedSpaces()
+				 );
+
+		pos = ImVec2(pGUI->ScaleX(40.0f), pGUI->ScaleY(1080.0f - pGUI->GetFontSize() * 1));
+		pGUI->RenderText(pos, (ImU32)0xFFFFFFFF, true, &debugPools[0]);
 	}
 }
 

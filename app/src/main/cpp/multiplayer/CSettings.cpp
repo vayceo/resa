@@ -76,15 +76,14 @@ void CSettings::save(int iIgnoreCategory)
 
 		ini_table_create_entry_as_int(config, "gui", "androidKeyboard", m_Settings.iAndroidKeyboard);
 		ini_table_create_entry_as_int(config, "gui", "outfit", m_Settings.iOutfitGuns);
-
-		// ini_table_create_entry_as_int(config, "gui", "hparmourtext", m_Settings.iHPArmourText);
-		// ini_table_create_entry_as_int(config, "gui", "pcmoney", m_Settings.iPCMoney);
 	}
 
 	ini_table_write_to_file(config, buff);
 	ini_table_destroy(config);
 }
 
+
+// TODO: json
 extern bool g_bIsTestMode;
 extern void ApplyFPSPatch(uint8_t fps);
 void CSettings::LoadSettings(const char *szNickName, int iChatLines)

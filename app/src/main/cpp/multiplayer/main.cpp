@@ -72,9 +72,6 @@ void PrintBuildCrashInfo()
 	CrashLog("Last pos: %.2f, %.2f, %.2f", lastPos.x, lastPos.y, lastPos.z);
 	CrashLog("Last nvEvent: %d", lastNvEvent);
     CrashLog("%s", streamimgState);
-
-//	CrashLog("libGTASA base address: 0x%X", g_libGTASA);
-//	CrashLog("libsamp base address: 0x%X", g_libSAMP);
 }
 
 #include <sstream>
@@ -110,6 +107,7 @@ void InitInGame()
 
 		Voice::CVoicePlugin::OnPluginLoad();
 		Voice::CVoicePlugin::OnSampLoad();
+
 		// voice
 		Log("[dbg:samp:load] : module loading...");
 
@@ -140,6 +138,7 @@ void InitInGame()
 
 	if (!bNetworkInited)
 	{
+		// TODO: obfuscate ip & port
         pNetGame = new CNetGame(
                 "94.23.168.153",
                 1957,
@@ -169,7 +168,6 @@ struct sigaction act_old;
 struct sigaction act1_old;
 struct sigaction act2_old;
 struct sigaction act3_old;
-
 
 void handler3(int signum, siginfo_t* info, void* contextPtr)
 {
@@ -297,16 +295,10 @@ JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved)
 	}
 	Log("libsamp.so image base address: 0x%X", g_libSAMP);
 
-    // heat
+    // anti-cheat by plaka penka xD
     CRYPTEDSTRING(libstr, "libgvraudio.so");
-    if(dlopen(libstr.decode().c_str(), RTLD_LAZY))
-    {
-        Log("Poshel nahui");
-        exit(0);
-    }
-
-    CRYPTEDSTRING(testtest1111, "libradio.so");
-    if(dlopen(testtest1111.decode().c_str(), RTLD_LAZY))
+	CRYPTEDSTRING(testtest1111, "libradio.so");
+    if(dlopen(libstr.decode().c_str(), RTLD_LAZY) || dlopen(testtest1111.decode().c_str(), RTLD_LAZY))
     {
         exit(0);
     }
@@ -427,9 +419,6 @@ void CrashLog(const char* fmt, ...)
 uint32_t GetTickCount()
 {
     return CTimer::m_snTimeInMillisecondsNonClipped;
-//	struct timeval tv;
-//	gettimeofday(&tv, nullptr);
-//	return (tv.tv_sec*1000+tv.tv_usec/1000);
 }
 
 extern "C"

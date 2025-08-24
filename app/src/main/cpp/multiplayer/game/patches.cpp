@@ -17,14 +17,12 @@ void DisableAutoAim()
 	CHook::RET("_ZN10CPlayerPed22FindWeaponLockOnTargetEv"); // CPedSamp::FindWeaponLockOnTarget
 	CHook::RET("_ZN10CPlayerPed26FindNextWeaponLockOnTargetEP7CEntityb"); // CPedSamp::FindNextWeaponLockOnTarget
 	CHook::RET("_ZN4CPed21SetWeaponLockOnTargetEP7CEntity"); // CPed::SetWeaponLockOnTarget
-
 }
 
 void ApplyFPSPatch(uint8_t fps)
 {
     if(fps > CSettings::maxFps)
         fps = CSettings::maxFps;
-
 
 #if VER_x32
 	CHook::WriteMemory(g_libGTASA + 0x005E49E0, (uintptr_t)& fps, 1);

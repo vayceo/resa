@@ -30,7 +30,7 @@ static uint32_t dwRLEDecompressSourceSize = 0;
 extern bool g_bIsTestMode;
 
 extern CGUI *pGUI;
-// Neiae/SAMP
+
 bool g_bPlaySAMP = false;
 
 void InitInMenu();
@@ -54,43 +54,36 @@ stFile* NvFOpen(const char* r0, const char* r1, int r2, int r3)
 
 	sprintf(path, "%s%s", g_pszStorage, r1);
 
-	// ----------------------------
 	if(!strncmp(r1+12, "mainV1.scm", 10))
 	{
 		sprintf(path, "%sSAMP/main.scm", g_pszStorage);
 		Log("Loading %s", path);
 	}
-	// ----------------------------
 	if(!strncmp(r1+12, "SCRIPTV1.IMG", 12))
 	{
 		sprintf(path, "%sSAMP/script.img", g_pszStorage);
 		Log("Loading script.img..");
 	}
-	// ----------------------------
 	if(!strncmp(r1, "DATA/PEDS.IDE", 13))
 	{
 		sprintf(path, "%sSAMP/peds.ide", g_pszStorage);
 		Log("Loading peds.ide..");
 	}
-	// ----------------------------
 	if(!strncmp(r1, "DATA/VEHICLES.IDE", 17))
 	{
 		sprintf(path, "%sSAMP/vehicles.ide", g_pszStorage);
 		Log("Loading vehicles.ide..");
 	}
-
 	if (!strncmp(r1, "DATA/GTA.DAT", 12))
 	{
 		sprintf(path, "%sSAMP/gta.dat", g_pszStorage);
 		Log("Loading gta.dat..");
 	}
-
 	if (!strncmp(r1, "DATA/HANDLING.CFG", 17))
 	{
 		sprintf(path, "%sSAMP/handling.cfg", g_pszStorage);
 		Log("Loading handling.cfg..");
 	}
-
 	if (!strncmp(r1, "DATA/WEAPON.DAT", 15))
 	{
 		sprintf(path, "%sSAMP/weapon.dat", g_pszStorage);
@@ -127,7 +120,6 @@ stFile* NvFOpen(const char* r0, const char* r1, int r2, int r3)
 #include "game/Widgets/TouchInterface.h"
 #include "Clouds.h"
 #include "gps.h"
-
 
 void MainMenu_OnStartSAMP()
 {
@@ -790,7 +782,7 @@ void InstallSpecialHooks()
     CHook::InlineHook("_Z15OS_ThreadLaunchPFjPvES_jPKci16OSThreadPriority", &custom_OS_ThreadLaunch, &orig_OS_ThreadLaunch);
 }
 
-// thanks Codeesar
+// thanks Codeesar for dont work damage calculator :(
 struct stPedDamageResponse
 {
 	CEntity* pEntity;

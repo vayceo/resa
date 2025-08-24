@@ -1,7 +1,3 @@
-//
-// Created on 24.01.2023.
-//
-
 #include <jni.h>
 #include "CLoader.h"
 #include "util/patch.h"
@@ -60,6 +56,7 @@
 #include "BattlePassBuy.h"
 #include "JavaGui.h"
 
+// ok?
 void CLoader::loadBassLib()
 {
    // LoadBassLibrary();
@@ -83,9 +80,6 @@ void CLoader::initCrashLytics()
 
     sprintf(str, "0x%x", g_libSAMP);
     firebase::crashlytics::SetCustomKey("libsamp.so", str);
-//
-//    sprintf(str, "0x%x", libc);
-//    firebase::crashlytics::SetCustomKey("libc.so", str);
 }
 
 void CLoader::loadSetting()
@@ -106,7 +100,7 @@ void CLoader::initJavaClasses(JavaVM* pjvm) {
     (void)pjvm->GetEnv((void**)&env, JNI_VERSION_1_6);
 
     CJavaGui::clazz = LinkJavaClass(env->FindClass("com/russia/game/NewUiList"));
-
+    
     CBattlePassBuy::clazz = LinkJavaClass(env->FindClass("com/russia/game/gui/battle_pass/BattlePassBuy"));
     CWarPoints::clazz = LinkJavaClass(env->FindClass("com/russia/game/gui/WarPoints"));
     CBusStation::clazz = LinkJavaClass(env->FindClass("com/russia/game/gui/BusStation"));
