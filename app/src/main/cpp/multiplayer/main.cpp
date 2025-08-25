@@ -267,11 +267,8 @@ extern "C"
 	}
 }
 
-#include "CFPSFix.h"
 #include "util/patch.h"
 #include "CLoader.h"
-
-CFPSFix g_fps;
 
 extern "C"
 JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved)

@@ -25,19 +25,17 @@ void ApplyFPSPatch(uint8_t fps)
         fps = CSettings::maxFps;
 
 #if VER_x32
-	CHook::WriteMemory(g_libGTASA + 0x005E49E0, (uintptr_t)& fps, 1);
-	CHook::WriteMemory(g_libGTASA + 0x005E492E, (uintptr_t)& fps, 1);
+    CHook::NOP(g_libGTASA + 0x005E49F4, 1);
+    CHook::NOP(g_libGTASA + 0x005E4934, 1);
 #else
     CHook::NOP(g_libGTASA + 0x70A474, 1);
     CHook::NOP(g_libGTASA + 0x70A398, 1);
-
-    CGame::PostToMainThread([=] {
+#endif
+    CGame::PostToMainThread([=]{
         auto RsGlobal = (RsGlobalType*)(g_libGTASA + (VER_x32 ? 0x009FC8FC : 0xC9B320));
-        CHook::UnFuck(g_libGTASA + 0xC9B320);
-        RsGlobal->maxFPS = fps;
+        RsGlobal->maxFPS = 60;
     });
 
-#endif
     Log("New fps limit = %d", fps);
 }
 

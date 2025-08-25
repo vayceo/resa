@@ -123,7 +123,7 @@ uint32_t CTimer::GetCyclesPerMillisecond()
 // 0x561A50
 uint32_t CTimer::GetCyclesPerFrame()
 {
-
+    return CHook::CallFunction<uint32_t>(g_libGTASA + (VER_x32 ? 0x0042101C + 1 : 0x504868));
 }
 
 uint64_t CTimer::GetCurrentTimeInCycles()

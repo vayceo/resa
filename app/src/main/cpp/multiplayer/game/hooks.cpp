@@ -488,7 +488,7 @@ void InjectHooks()
 {
 	Log("InjectHooks");
 
-    COcclusion::InjectHooks();
+    //COcclusion::InjectHooks();
     CEntryExitManager::InjectHooks();
     CTaskSimpleUseGun::InjectHooks();
     CIplStore::InjectHooks();
@@ -549,7 +549,7 @@ void InjectHooks()
 	RenderBuffer::InjectHooks();
     CTimeCycle::InjectHooks();
 	CCoronas::InjectHooks();
-	//CDraw::InjectHooks();
+	CDraw::InjectHooks();
 	CClock::InjectHooks();
 	CBirds::Init();
 	CVehicleModelInfo::InjectHooks();
@@ -557,7 +557,7 @@ void InjectHooks()
 	CSprite2d::InjectHooks();
 	//CFileLoader::InjectHooks();
 	CShadows::InjectHooks();
-    CPickups::InjectHooks();
+    //CPickups::InjectHooks();
 	CRenderer::InjectHooks();
 	CStreamingInfo::InjectHooks();
 	TextureDatabase::InjectHooks();
