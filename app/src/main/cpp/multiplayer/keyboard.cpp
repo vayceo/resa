@@ -2288,11 +2288,10 @@ bool ProcessLocalCommands(const char str[])
 		CDebugInfo::ToggleDebugDraw();
 		return true;
 	}
-//    if(strcmp(str, "/reconnect") == 0) {
-//        Log("/reconntct");
-//        pNetGame->SetGameState(eNetworkState::WAIT_CONNECT);
-//        return true;
-//    }
+    if(strcmp(str, "/recon") == 0) {
+        pNetGame->SetGameState(eNetworkState::WAIT_CONNECT);
+        return true;
+    }
 	if(strcmp(str, "/headmove") == 0) {
 		g_uiHeadMoveEnabled = !g_uiHeadMoveEnabled;
 		CChatWindow::AddMessage("Движение головы x");
@@ -2326,39 +2325,18 @@ bool ProcessLocalCommands(const char str[])
 		CObjectEditor::Start(obj);
 		return true;
 	}
-    if (strstr(str, "/testsprite "))
-    {
-        extern bool testSpriteRender;
-        extern ObjectProperties testSpriteTmpObject;
-        int type;
-        if (sscanf(str, "%*s%d", &type) == -1)
-        {
-            CChatWindow::AddMessage("Используйте: /testsprite [id]");
-            return true;
-        }
-        testSpriteTmpObject.id = type;
-        testSpriteRender = !testSpriteRender;
-        return true;
-    }
-	if (strstr(str, "/vin "))
+	if (strstr(str, "/tuntest"))
 	{
-		int type;
-		if (sscanf(str, "%*s%d", &type) == -1)
-		{
-			CChatWindow::AddMessage("Используйте: /vin [id]");
-			return true;
-		}
-        //CBuyPlate::Constructor();
-      //  uint32_t prices[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-       // CStyling::Show(99999, 0, prices);
-		//pVeh->m_iVinylId = type;
-		//CMagicStore::Constructor();
-	//	CTaxi::NewOrder(type);
-
-       // while (CStreaming::RemoveLeastUsedModel(0));
-		//CChatWindow::AddMessage("use count = %d, %x", CModelInfo::GetModelInfo(type)->m_nRefCount, *(uint32*)(g_libGTASA + 0x008A1150));
+        uint32_t prices[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+        CStyling::Show(9999999, 0, prices);
 		return true;
 	}
+    if (strstr(str, "/tiretest"))
+    {
+        uint32_t price;
+        CTireShop::show(price);
+        return true;
+    }
 
 	return false;
 }

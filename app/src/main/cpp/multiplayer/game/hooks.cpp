@@ -1113,9 +1113,6 @@ void CAutomobile__PreRender_hook(CVehicle* thiz)
         pVeh->ProcessWheelsOffset();
         g_pLastProcessedVehicleMatrix = pVeh;
 
-        pModelInfoStart->m_fWheelSizeFront = pVeh->m_fWheelSize;
-        pModelInfoStart->m_fWheelSizeRear = pVeh->m_fWheelSize;
-
         if (pVeh->neon.IsSet()) {
 			pVeh->neon.Render(pVeh->m_pVehicle);
         }
@@ -1656,10 +1653,10 @@ void InstallHooks()
     CHook::InlineHook("_ZN14MainMenuScreen6OnExitEv", &MainMenuScreen__OnExit_hook, &MainMenuScreen__OnExit);
 
     // TODO: FIX
-/*	CHook::InlineHook("_ZN11CAutomobile9PreRenderEv", &CAutomobile__PreRender_hook, &CAutomobile__PreRender);
+	CHook::InlineHook("_ZN11CAutomobile9PreRenderEv", &CAutomobile__PreRender_hook, &CAutomobile__PreRender);
 	CHook::InlineHook("_ZN11CAutomobile17UpdateWheelMatrixEii", &CAutomobile__UpdateWheelMatrix_hook, &CAutomobile__UpdateWheelMatrix);
 	CHook::InlineHook("_ZN7CMatrix6RotateEfff", &CMatrix__Rotate_hook, &CMatrix__Rotate);
-	CHook::InlineHook("_ZN7CMatrix8SetScaleEfff", &CMatrix__SetScale_hook, &CMatrix__SetScale);*/
+	CHook::InlineHook("_ZN7CMatrix8SetScaleEfff", &CMatrix__SetScale_hook, &CMatrix__SetScale);
 
 	//CHook::InlineHook("_ZN17CTaskSimpleUseGun17RemoveStanceAnimsEP4CPedf", &CTaskSimpleUseGun__RemoveStanceAnims_hook, &CTaskSimpleUseGun__RemoveStanceAnims);
 
