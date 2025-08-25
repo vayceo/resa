@@ -107,7 +107,6 @@ void CGUI::RenderMechanicHook() {
 }
 
 void CGUI::RenderPassengerButton() {
-
 	if(!CHUD::NeededRenderPassengerButton())
 		return;
 

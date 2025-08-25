@@ -104,11 +104,23 @@ void CHUD::toggleLockButton(bool toggle)
 }
 
 bool CHUD::NeededRenderPassengerButton() {
-    CPedSamp* pPed = CGame::FindPlayerPed();
-    if(bIsShowEnterExitButt && !pPed->m_pPed->IsInVehicle())
-        return true;
+    if (!CHUD::bIsShow || !bIsShowEnterExitButt)
+        return false;
 
-    return false;
+    CPedSamp* pPed = CGame::FindPlayerPed();
+    if (!pPed || pPed->m_pPed->IsInVehicle())
+        return false;
+
+    VEHICLEID nearestId = CVehiclePool::FindNearestToLocalPlayerPed();
+    if (nearestId == INVALID_VEHICLE_ID)
+        return false;
+
+    CVehicleSamp* pVeh = CVehiclePool::GetAt(nearestId);
+    if (!pVeh || !pVeh->m_pVehicle)
+        return false;
+
+    float dist = pVeh->m_pVehicle->GetDistanceFromLocalPlayerPed();
+    return (dist < 4.0f);
 }
 
 void CHUD::updateAmmo()
