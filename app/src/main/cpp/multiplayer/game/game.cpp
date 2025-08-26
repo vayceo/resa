@@ -460,6 +460,7 @@ bool CGame::InitialiseRenderWare() {
 	CVisibilityPlugins::Initialise();
 
 #if VER_SAMP
+    TextureDatabaseRuntime::Load("samp", false, TextureDatabaseFormat::DF_DXT);
     TextureDatabaseRuntime::Load("mobile", false, TextureDatabaseFormat::DF_DXT);
     TextureDatabaseRuntime::Load("txd", false, TextureDatabaseFormat::DF_DXT);
     TextureDatabaseRuntime::Load("gta3", false, TextureDatabaseFormat::DF_DXT);

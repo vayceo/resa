@@ -1511,11 +1511,10 @@ bool CEventKnockOffBike__AffectsPed_hook(uintptr_t *thiz, CPed *a2)
 	return false;
 }
 
-bool (*CWeapon__Fire)(CEntity* firingEntity, CVector* origin, CVector* muzzlePosn, CEntity* targetEntity, CVector* target, CVector* originForDriveBy);
-bool CWeapon__Fire_hook(CEntity* firingEntity, CVector* origin, CVector* muzzlePosn, CEntity* targetEntity, CVector* target, CVector* originForDriveBy) {
-	auto res = CWeapon__Fire(firingEntity, origin, muzzlePosn, targetEntity, target, originForDriveBy);
+bool (*CWeapon__Fire)();
+bool CWeapon__Fire_hook() {
 	CHUD::updateAmmo();
-	return res;
+	return CWeapon__Fire();
 }
 
 void (*CPed__SetCurrentWeapon)(CPed* thiz, eWeaponType weaponType);
