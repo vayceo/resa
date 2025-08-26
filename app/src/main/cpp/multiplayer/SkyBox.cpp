@@ -17,20 +17,19 @@ void CSkyBox::Init()
 {
     if (!CModelInfo::GetModelInfo(SKYBOX_OBJECT_ID)) {
         Log("Error CSkyBox::Init. No mode %d", SKYBOX_OBJECT_ID);
-        assert(0); // hm, okay..
     }
     m_pSkyObject = CreateObjectScaled(SKYBOX_OBJECT_ID, 0.8f);
 }
 
-// TODO: fix crash
 void CSkyBox::Process() {
-    /*if(!m_pSkyObject)
+    if(!m_pSkyObject)
         return CSkyBox::Init();
 
     RwMatrix matrix;
 
     m_pSkyObject->m_pEntity->GetMatrix(&matrix);
 
+    CCamera& TheCamera = *reinterpret_cast<CCamera*>(g_libGTASA + (VER_x32 ? 0x00951FA8 : 0xBBA8D0));
     matrix.pos = TheCamera.GetPosition();
 
     CVector axis{0.0f, 0.0f, 1.0f};
@@ -39,7 +38,7 @@ void CSkyBox::Process() {
     m_bNeedRender = true;
 
     ReTexture();
-    
+
     m_pSkyObject->m_pEntity->Remove();
 
     m_pSkyObject->m_pEntity->SetMatrix((CMatrix&)matrix);
@@ -50,7 +49,7 @@ void CSkyBox::Process() {
 
     CUtil::RenderEntity(m_pSkyObject->m_pEntity);
 
-    m_bNeedRender = false;*/
+    m_bNeedRender = false;
 }
 
 CObjectSamp* CSkyBox::CreateObjectScaled(int iModel, float fScale)
@@ -92,21 +91,20 @@ void CSkyBox::ReTexture()
         m_dwChangeTime = iHours;
 
         if (iHours >= 0 && iHours < 6 || iHours > 18 ) {
-            SetTexture("skybox_1");
+            SetTexture("night_sky_1");
         } else if (iHours >= 6 && iHours < 8) {
-            SetTexture("skybox_2");
+            SetTexture("afternoon_sky_1");
         } else if (iHours >= 8 && iHours < 11) {
-            SetTexture("skybox_3");
+            SetTexture("daily_sky_1");
         } else if (iHours >= 11 && iHours <= 15) {
-            SetTexture("skybox_4");
+            SetTexture("evening_sky_1");
         } else if (iHours == 16) {
-            SetTexture("skybox_5");
+            SetTexture("evening_sky_1");
         } else if (iHours == 17) {
-            SetTexture("skybox_6");
+            SetTexture("evening_sky_1");
         } else if (iHours == 18) {
-            SetTexture("skybox_7");
+            SetTexture("evening_sky_1");
         }
-
     }
 
     auto pAtomic = m_pSkyObject->m_pEntity->m_pRwObject;
@@ -134,12 +132,19 @@ RwObject* CSkyBox::RwFrameForAllObjectsCallback(RwObject* object, void* data)
     auto materials = std::span(geometry.matList.materials,
                                std::min<size_t>(geometry.matList.numMaterials, 16));
 
-    const auto& skyColor = CTimeCycle::m_CurrentColours;
+    /*const auto& skyColor = CTimeCycle::m_CurrentColours;
     const RwRGBA rgbaColor = {
             static_cast<RwUInt8>(skyColor.m_nSkyBottomRed),
             static_cast<RwUInt8>(skyColor.m_nSkyBottomGreen),
             static_cast<RwUInt8>(skyColor.m_nSkyBottomBlue),
             150
+    };*/
+
+    const RwRGBA rgbaColor = {
+            255,
+            255,
+            255,
+            255
     };
 
     for (auto* material : materials)
@@ -163,7 +168,7 @@ void CSkyBox::SetTexture(const char *texName)
         RwTextureDestroy(m_pTex);
     }
 
-    m_pTex = CUtil::LoadTextureFromDB("gta3", texName);
+    m_pTex = CUtil::LoadTextureFromDB("samp", texName);
 }
 
 void CSkyBox::SetRotSpeed(float speed)

@@ -231,6 +231,8 @@ void Weather(RPCParameters *rpcParams)
 	CGame::SetWorldWeather(byteWeather);
 }
 
+// TODO: RequestClass
+// TODO: CLocalPlayer::m_bWaitingForSpawnRequestReply
 void RequestSpawn(RPCParameters *rpcParams)
 {
     LOGRPC("RequestSpawn");
