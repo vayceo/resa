@@ -379,7 +379,6 @@ void BuildVertexSource(uint32 flags) {
     }
     if (flags & FLAG_FOG)
         buff << "Out_FogAmt = clamp((length(WorldPos.xyz - CameraPosition.xyz) - FogDistances.x) * FogDistances.z, 0.0, 1.0);";
-    //   buff << "Out_FogAmt = clamp((length(WorldPos.xyz - CameraPosition.xyz) - FogDistances.x) * FogDistances.z, 0.0, 0.90);";
 
     if (flags & FLAG_TEX0) {
         char* tex;

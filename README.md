@@ -15,7 +15,7 @@ SA:MP cache:
 - [Google Drive](https://drive.google.com/file/d/1f3nBJkbWcDvMiW5BjhNsztf4HW4PrSAh/view?usp=sharing)
 
 CR:MP cache:
-- soon...
+- [Google Drive](https://drive.google.com/file/d/1W1f1Xs3utA3sRppwCeXqU1KBFENTNqAn/view?usp=sharing)
 
 **Note:** The cache must be unpacked into the application package directory:
 `/Android/data/com.russia.game/files/`
@@ -35,7 +35,6 @@ Contributions are welcome!
 If you want to help improve the project:
 
 - Fork the repository
-- Create a new branch for your feature or fix
 - Commit your changes with clear messages
 - Open a Pull Request
 

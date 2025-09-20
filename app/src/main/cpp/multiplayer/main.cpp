@@ -338,21 +338,6 @@ JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved)
 	return JNI_VERSION_1_6;
 }
 
-void LogLong(const char* message)
-{
-    const size_t MAX_LOG_SIZE = 1000;
-    size_t messageLength = strlen(message);
-
-    for (size_t i = 0; i < messageLength; i += MAX_LOG_SIZE)
-    {
-        char buffer[MAX_LOG_SIZE + 1];
-        size_t length = ((i + MAX_LOG_SIZE) < messageLength) ? MAX_LOG_SIZE : (messageLength - i);
-        strncpy(buffer, &message[i], length);
-        buffer[length] = '\0';
-        __android_log_print(ANDROID_LOG_DEBUG, "tag", "%s", buffer);
-    }
-}
-
 void Log(const char *fmt, ...)
 {
 	static char buffer[512] {};
