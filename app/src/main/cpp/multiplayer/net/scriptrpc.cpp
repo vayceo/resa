@@ -921,13 +921,25 @@ void ScrCreateObject(RPCParameters* rpcParams)
 	}
 	bsData.Read(iMaterialCount);
 
-	iTotalObjects++;
-	//Log("ID: %d, model: %d. iTotalObjects = %d", wObjectID, ModelID, iTotalObjects);
+    if (!CModelInfo::GetModelInfo(ModelID)) {
+        Log("Error ScrCreateObject. No model %d", ModelID);
+        return;
+    }
 
-	CObjectPool::New(wObjectID, ModelID, vecPos, vecRot, fDrawDistance);
+    if (!CObjectPool::New(wObjectID, ModelID, vecPos, vecRot, fDrawDistance)) {
+        Log("Error ScrCreateObject. CObjectPool::New failed for id %u", wObjectID);
+        return;
+    }
 
-	CObjectSamp* pObject = CObjectPool::GetAt(wObjectID);
-	if (!pObject) return;
+    CObjectSamp* pObject = CObjectPool::GetAt(wObjectID);
+    if (!pObject) {
+        Log("Error ScrCreateObject. GetAt returned null for id %u", wObjectID);
+        return;
+    }
+
+    iTotalObjects++;
+    //Log("ID: %d, model: %d. iTotalObjects = %d", wObjectID, ModelID, iTotalObjects);
+
 	if (attachedVehicleID != -1)
 	{
 		pObject->AttachToVehicle(attachedVehicleID, &vecAttachedOffset, &vecAttachedRotation);
